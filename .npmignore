@@ -1,0 +1,4 @@
+!dist/
+
+# blacklist everything
+*
