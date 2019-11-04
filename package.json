@@ -5,17 +5,16 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:dev": "ng build ddap-common-lib && npm run copyStyles",
-    "build:prod": "ng build --prod ddap-common-lib && npm run copyStyles",
     "test": "ng test",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "copyStyles": "cp -r ./projects/ddap-common-lib/styles ./dist/ddap-common-lib/",
-    "prepublish": "npm run build:prod"
+    "prepublish": "npm run build && npm run copyStyles"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.8",
+    "@angular/cdk": "~8.2.1",
     "@angular/common": "~8.2.8",
     "@angular/compiler": "~8.2.8",
     "@angular/core": "~8.2.8",
