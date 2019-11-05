@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import * as dayjs from 'dayjs';
+import * as dayjs_ from 'dayjs';
+const dayjs = dayjs_;
 
 @Injectable({
   providedIn: 'root',

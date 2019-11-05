@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
-import * as dayjs from 'dayjs';
-import * as relativeTimePlugin from 'dayjs/plugin/relativeTime';
-import { TimeDurationParser } from 'ddap-common-lib';
+import * as dayjs_ from 'dayjs';
+const dayjs = dayjs_;
+import * as relativeTimePlugin_ from 'dayjs/plugin/relativeTime';
+const relativeTimePlugin = relativeTimePlugin_;
+import { TimeDurationParser } from '../../time-duration.parser';
 
 import { VisaPassportService } from '../visa-passport.service';
 import { Assertion } from './assertion.model';
