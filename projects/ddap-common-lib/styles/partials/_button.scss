@@ -6,4 +6,11 @@ ddap-root {
     color: white;
     border-radius: 3px;
   }
+
+  a.btn-link {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 500;
+    cursor: pointer;
+  }
 }
