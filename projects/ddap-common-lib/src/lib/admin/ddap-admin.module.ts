@@ -12,15 +12,12 @@ import { FormsModule } from "@angular/forms";
 import { EntityDescriptionComponent } from "./entity-description/entity-description.component";
 import { EntityDescriptionLinkComponent } from "./entity-description/entity-description-link.component";
 import { MatInputModule } from "@angular/material/input";
-import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
-import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     EntityDescriptionComponent,
     EntityDescriptionLinkComponent,
     EntityListComponent,
-    LandingInfoCardComponent,
     OptionEditableListComponent,
   ],
   imports: [
@@ -33,13 +30,11 @@ import { MatCardModule } from '@angular/material';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule,
   ],
   exports: [
     EntityDescriptionComponent,
     EntityDescriptionLinkComponent,
     EntityListComponent,
-    LandingInfoCardComponent,
     OptionEditableListComponent,
   ]
 })

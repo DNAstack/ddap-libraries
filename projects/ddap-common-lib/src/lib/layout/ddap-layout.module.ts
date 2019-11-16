@@ -11,12 +11,15 @@ import { SandboxBannerComponent } from "./sandbox-banner/sandbox-banner.componen
 import { SearchableHeaderComponent } from "./header/searchable-header.component";
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RealmInterceptor } from './realm/realm-interceptor.service';
+import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     HeaderBtnComponent,
     HeaderAddBtnComponent,
+    LandingInfoCardComponent,
     MainComponent,
     SandboxBannerComponent,
     SearchableHeaderComponent,
@@ -26,11 +29,13 @@ import { RealmInterceptor } from './realm/realm-interceptor.service';
     RouterModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
   ],
   exports: [
     HeaderComponent,
     HeaderBtnComponent,
     HeaderAddBtnComponent,
+    LandingInfoCardComponent,
     MainComponent,
     SandboxBannerComponent,
     SearchableHeaderComponent,
