@@ -13,6 +13,7 @@ import { EntityDescriptionComponent } from "./entity-description/entity-descript
 import { EntityDescriptionLinkComponent } from "./entity-description/entity-description-link.component";
 import { MatInputModule } from "@angular/material/input";
 import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
   ],
   exports: [
     EntityDescriptionComponent,
