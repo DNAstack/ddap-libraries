@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ddap-landing-info-card',
+  selector: 'ddaplib-landing-info-card',
   templateUrl: './landing-info-card.component.html',
   styleUrls: ['./landing-info-card.component.scss'],
 })
