@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 
-const STORAGE_KEY = 'sandbox-warning-acknowledgement';
+const STORAGE_KEY = 'realm';
 
 @Injectable({
   providedIn: 'root',
