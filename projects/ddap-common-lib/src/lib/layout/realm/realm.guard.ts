@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
-import { RealmStateService } from 'ddap-common-lib';
 import _get from 'lodash.get';
+import { RealmStateService } from './realm-state.service';
 
 @Injectable({
   providedIn: 'root',
