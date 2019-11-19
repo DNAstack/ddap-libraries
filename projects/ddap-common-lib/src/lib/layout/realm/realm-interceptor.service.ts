@@ -5,11 +5,13 @@ import _get from 'lodash.get';
 import { Observable } from 'rxjs';
 
 import { realmIdPlaceholder } from './realm.constant';
+import { RealmStateService } from './realm-state.service';
 
 @Injectable()
 export class RealmInterceptor implements HttpInterceptor {
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private realmStateService: RealmStateService) {
 
   }
 
@@ -18,7 +20,7 @@ export class RealmInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
-    const realmId = _get(this.activatedRoute, 'root.firstChild.snapshot.params.realmId');
+    const realmId = _get(this.activatedRoute, 'root.firstChild.snapshot.params.realmId', this.realmStateService.getRealm());
     const secureReq = req.clone({
       url: req.url.replace(realmIdPlaceholder, realmId),
     });
