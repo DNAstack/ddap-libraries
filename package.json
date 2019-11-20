@@ -10,7 +10,8 @@
     "lint:fix": "ng lint --fix",
     "copyStyles": "cp -r ./projects/ddap-common-lib/styles ./dist/ddap-common-lib/",
     "copyAssets": "cp -r ./projects/ddap-common-lib/assets ./dist/ddap-common-lib/",
-    "prepublish": "npm run build && npm run copyStyles && npm run copyAssets"
+    "prepublish": "npm run build && npm run copyStyles && npm run copyAssets",
+    "ci": "npm prepublish && cd dist/ddap-common-lib && npm version patch && npm publish"
   },
   "private": true,
   "dependencies": {
