@@ -23,7 +23,7 @@ steps:
         path: /root
 
   - id: build_and_publish
-    name: 'node:10'
+    name: 'node:11'
     entrypoint: 'bash'
     args:
       - '-e'
