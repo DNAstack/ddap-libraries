@@ -33,10 +33,15 @@ steps:
         # Copy files to the home filder because the home folder is protected.
         cp -r /homedir_dotfiles/.??* /builder/home/
 
-        npm login
+        # Verify node and npm version
+        node -v
+        npm -v
+        # Build and prepare dist before publishing
         npm prepublish
         cd dist/ddap-common-lib
         npm version patch
+        # Login to npmjs registry before publishing
+        npm login
         npm publish
     volumes:
       - name: 'homedir'
