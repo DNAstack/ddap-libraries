@@ -36,12 +36,15 @@ steps:
         # Verify node and npm version
         node -v
         npm -v
-        # Build and prepare dist before publishing
-        npm prepublish
+
+        cp /builder/home/.npmrc dist/ddap-common-lib
+
+        npm install
+        npm run prepublish
         cd dist/ddap-common-lib
         npm version patch
-        # Login to npmjs registry before publishing
-        npm login
+
+        # With .npmrc in where "npm publish" running, "npm login" or "npm adduser" is not required.
         npm publish
     volumes:
       - name: 'homedir'
@@ -52,8 +55,7 @@ logsBucket: dnastack-ci-logs
 options:
   substitutionOption: ALLOW_LOOSE
   logStreamingOption: STREAM_ON
-tags:  # NOTE: Run ID is set to "rogue" as a special ID for jobs not triggered by the webhook service.
-  - "lib.ddap-libraries"
+tags:
   - "pipeline"
   - "pipeline.run_id.rogue"
   - "pipeline.type.library-javascript"
