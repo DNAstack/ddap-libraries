@@ -47,7 +47,6 @@ steps:
         npm run prepublish
         cd dist/ddap-common-lib
         cp /builder/home/.npmrc .
-        npm version prepatch
 
         # With .npmrc in where "npm publish" running, "npm login" or "npm adduser" is not required.
         npm publish
