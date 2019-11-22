@@ -28,6 +28,10 @@ steps:
       - name: 'homedir'
         path: /root
 
+  - id: list_content
+    name: alpine
+    args: ['find', '.']
+
   - id: fetch_history
     name: gcr.io/cloud-builders/git
     args: ['fetch', '--unshallow', '--tags']
