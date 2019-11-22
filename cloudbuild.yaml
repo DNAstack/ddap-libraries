@@ -18,6 +18,12 @@ steps:
         cp .netrc /root/
         rm .netrc
         chmod 600 /root/.netrc
+
+        # Decrypt the .netrc (only required for compilation)
+        gcloud kms decrypt --ciphertext-file=.npmrc.enc --plaintext-file=.npmrc --location=global --keyring=cloud-build-webhook --key=secret_key
+        cp .npmrc /root/
+        rm .npmrc
+        chmod 600 /root/.npmrc
     volumes:
       - name: 'homedir'
         path: /root
@@ -37,12 +43,11 @@ steps:
         node -v
         npm -v
 
-        cp /builder/home/.npmrc dist/ddap-common-lib
-
         npm install
         npm run prepublish
         cd dist/ddap-common-lib
-        npm version patch
+        cp /builder/home/.npmrc .
+        npm version prepatch
 
         # With .npmrc in where "npm publish" running, "npm login" or "npm adduser" is not required.
         npm publish
