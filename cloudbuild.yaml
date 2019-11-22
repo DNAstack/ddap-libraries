@@ -39,17 +39,20 @@ steps:
         # Copy files to the home filder because the home folder is protected.
         cp -r /homedir_dotfiles/.??* /builder/home/
 
-        # Verify node and npm version
-        node -v
-        npm -v
+        git pull -t
+        echo $$(git describe)
 
-        npm install
-        npm run prepublish
-        cd dist/ddap-common-lib
-        cp /builder/home/.npmrc .
+        # # Verify node and npm version
+        # node -v
+        # npm -v
 
-        # With .npmrc in where "npm publish" running, "npm login" or "npm adduser" is not required.
-        npm publish
+        # npm install
+        # npm run prepublish
+        # cd dist/ddap-common-lib
+        # cp /builder/home/.npmrc .
+
+        # # With .npmrc in where "npm publish" running, "npm login" or "npm adduser" is not required.
+        # npm publish
     volumes:
       - name: 'homedir'
         path: /homedir_dotfiles
