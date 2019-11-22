@@ -28,6 +28,10 @@ steps:
       - name: 'homedir'
         path: /root
 
+  - id: fetch_history
+    name: gcr.io/cloud-builders/git
+    args: ['fetch', '--unshallow', '--tags']
+
   - id: build_and_publish
     name: 'node:11'
     entrypoint: 'bash'
@@ -39,7 +43,7 @@ steps:
         # Copy files to the home filder because the home folder is protected.
         cp -r /homedir_dotfiles/.??* /builder/home/
 
-        git pull -t
+        ls -a
         echo $$(git describe)
 
         # # Verify node and npm version
