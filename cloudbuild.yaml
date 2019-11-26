@@ -55,7 +55,6 @@ steps:
         path: /homedir_dotfiles
 
 timeout: 3600s
-logsBucket: dnastack-ci-logs
 options:
   substitutionOption: ALLOW_LOOSE
   logStreamingOption: STREAM_ON
