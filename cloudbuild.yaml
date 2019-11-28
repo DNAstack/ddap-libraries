@@ -31,6 +31,9 @@ steps:
   - name: gcr.io/cloud-builders/git
     entrypoint: 'bash'
     args:
+      - '-e'
+      - '-x'
+      - '-c'
       - |
         git clone https://github.com/DNAstack/ddap-libraries.git /tmp/ddap-libraries
         cp -r /tmp/ddap-libraries/.git .git
