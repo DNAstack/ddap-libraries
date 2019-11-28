@@ -53,8 +53,9 @@ steps:
         node -v
         npm -v
 
-        # prepublish run as part of install
         npm install
+        # On newer versions of node, this doesn't run as part of npm install
+        npm run prepublish
         cd dist/ddap-common-lib
         cp /builder/home/.npmrc .
 
