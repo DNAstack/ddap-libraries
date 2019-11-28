@@ -28,6 +28,9 @@ steps:
       - name: 'homedir'
         path: /root
 
+  - name: gcr.io/cloud-builders/git
+    args: ['clone', 'https://github.com/DNAstack/ddap-libraries.git']
+
   - id: build_and_publish
     name: 'node:11'
     entrypoint: 'bash'
