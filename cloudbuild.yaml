@@ -53,11 +53,12 @@ steps:
         node -v
         npm -v
 
+        # prepublish run as part of install
         npm install
-        npm run prepublish
         cd dist/ddap-common-lib
         cp /builder/home/.npmrc .
 
+        npm version $(git describe)
         # With .npmrc in where "npm publish" running, "npm login" or "npm adduser" is not required.
         npm publish
     volumes:
