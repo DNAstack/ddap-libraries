@@ -25,7 +25,7 @@ export function removeInternalFields(model: { [ key: string]: string }, fieldsTo
       Object.entries(value)
         .forEach(([innerKey, innerValue]: any) => {
           if (innerValue instanceof Object) {
-            return this.removeInternalFields(innerValue, fieldsToRemove);
+            return removeInternalFields(innerValue, fieldsToRemove);
           }
           if (fieldsToRemove.some((fieldToRemove) => fieldToRemove === innerKey)) {
             delete value[innerKey];
@@ -40,7 +40,7 @@ export function alignControlsWithModelDefinitions(formGroups: FormGroup[]) {
     Object.entries(formGroup.controls)
       .forEach(([currentControlId, control]: any) => {
         const { id: newControlId } = control.value;
-        this.changeControlId(formGroup, currentControlId, newControlId);
+        changeControlId(formGroup, currentControlId, newControlId);
       });
   });
 }
