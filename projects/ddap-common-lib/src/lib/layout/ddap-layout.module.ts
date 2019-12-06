@@ -12,7 +12,8 @@ import { SearchableHeaderComponent } from "./header/searchable-header.component"
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RealmInterceptor } from './realm/realm-interceptor.service';
 import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatPaginatorModule } from '@angular/material';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MatCardModule } from '@angular/material';
     HeaderAddBtnComponent,
     LandingInfoCardComponent,
     MainComponent,
+    PaginatorComponent,
     SandboxBannerComponent,
     SearchableHeaderComponent,
   ],
@@ -30,6 +32,7 @@ import { MatCardModule } from '@angular/material';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatPaginatorModule,
   ],
   exports: [
     HeaderComponent,
@@ -37,6 +40,7 @@ import { MatCardModule } from '@angular/material';
     HeaderAddBtnComponent,
     LandingInfoCardComponent,
     MainComponent,
+    PaginatorComponent,
     SandboxBannerComponent,
     SearchableHeaderComponent,
   ],

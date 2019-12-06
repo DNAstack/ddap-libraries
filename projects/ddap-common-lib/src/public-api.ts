@@ -10,6 +10,7 @@ export * from './lib/layout/sandbox-banner/sandbox-banner-state.service';
 export * from './lib/layout/realm/realm.constant';
 export * from './lib/layout/realm/realm-state.service';
 export * from './lib/layout/realm/realm.guard';
+export * from './lib/layout/paginator/pagination-type.enum';
 export * from './lib/form/ddap-form.module';
 export * from './lib/form/form';
 export * from './lib/form/form-validation.service';
