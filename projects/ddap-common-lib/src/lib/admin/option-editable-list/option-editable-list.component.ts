@@ -17,8 +17,8 @@ export class OptionEditableListComponent {
   @Output()
   readonly submitted: EventEmitter<any> = new EventEmitter<any>();
 
-  getDescriptorFor(optionKey) {
-    return this.options.descriptors[optionKey];
+  getValueForDescriptor(optionKey) {
+    return this.options[optionKey];
   }
 
   resetSelection() {
