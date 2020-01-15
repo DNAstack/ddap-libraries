@@ -1,0 +1,36 @@
+@import "./../../../../styles/modules/colors";
+.mat-list-item {
+  height: auto;
+}
+.item-row {
+  width: 100%;
+  height: inherit;
+  padding: 0.5rem 0;
+  .item-row--key{
+    min-width: 20%;
+    padding-right: 1rem;
+  }
+  .item-row--value {
+    padding-left: 1rem;
+    word-break: break-all;
+    width: 70%;
+    font-size: 0.9rem;
+    color: $color-dark-grey;
+  }
+  a {
+    text-decoration: none;
+    color: $color-dark-grey;
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-color;
+    }
+  }
+  &.pd-0 {
+    padding: 0;
+  }
+}
+.wd-100 {
+  width: 100%;
+  position: relative;
+}
