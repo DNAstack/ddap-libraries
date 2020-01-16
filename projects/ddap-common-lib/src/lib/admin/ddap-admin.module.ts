@@ -12,6 +12,8 @@ import { FormsModule } from "@angular/forms";
 import { EntityDescriptionComponent } from "./entity-description/entity-description.component";
 import { EntityDescriptionLinkComponent } from "./entity-description/entity-description-link.component";
 import { MatInputModule } from "@angular/material/input";
+import { MatListModule } from "@angular/material/list";
+import { EntityViewerComponent } from './entity-viewer/entity-viewer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { MatInputModule } from "@angular/material/input";
     EntityDescriptionLinkComponent,
     EntityListComponent,
     OptionEditableListComponent,
+    EntityViewerComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { MatInputModule } from "@angular/material/input";
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatListModule,
   ],
   exports: [
     EntityDescriptionComponent,

@@ -23,7 +23,13 @@
             </div>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <json-editor [options]="editorOptions" [data]="entity.dto"></json-editor>
+        <ng-template [ngIf]="useJsonEditor" [ngIfElse]="notJsonEditor">
+          <json-editor [options]="editorOptions" [data]="entity.dto"></json-editor>
+        </ng-template>
+        <ng-template #notJsonEditor>
+          <mat-divider></mat-divider>
+          <ddaplib-entity-viewer [listData]="entity.dto"></ddaplib-entity-viewer>
+        </ng-template>
         <mat-action-row>
           <button mat-button
                   [routerLink]="[entity.name]"
