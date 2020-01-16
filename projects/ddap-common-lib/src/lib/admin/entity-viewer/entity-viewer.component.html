@@ -1,28 +1,25 @@
 <ng-template [ngIf]="isArray(modifiedListData)" [ngIfElse]="notArray">
   <ng-container *ngFor="let val of modifiedListData">
-    <div class="flex item-row pd-0">
       <div class="flex flex--column"
            *ngIf="isArray(val) || isObject(val)"
            [ngClass]="!isObject(val) ? 'item-row--key': 'wd-100'">
         <ddaplib-entity-viewer [listData]="val"></ddaplib-entity-viewer>
       </div>
       <ng-template *ngTemplateOutlet="linkTextContainer; context: {$implicit: val}"></ng-template>
-    </div>
   </ng-container>
 </ng-template>
 <ng-template #notArray>
   <mat-list>
     <ng-container *ngFor="let val of objKeys(modifiedListData)">
       <mat-list-item>
-        <div class="flex item-row">
-          <div class="flex flex--column"
-               [ngClass]="!isObject(modifiedListData[val]) ? 'item-row--key': 'wd-100'">
-            {{val}}
+        <div class="flex item-row" [ngClass]="!isObject(modifiedListData[val]) ? 'flex--row' : 'flex--column'">
+          <div [ngClass]="isObject(modifiedListData[val]) ? 'fg-2': 'fg-1'">
+            {{formatVal(val)}}
           </div>
-          <ddaplib-entity-viewer *ngIf="isArray(modifiedListData[val]) || isObject(modifiedListData[val])"
-                                  [listData]="modifiedListData[val]"
-                                  class="wd-100">
-          </ddaplib-entity-viewer>
+          <div [ngClass]="isObject(modifiedListData[val]) ? 'flex flex--row' : 'fg-2'"
+               *ngIf="isArray(modifiedListData[val]) || isObject(modifiedListData[val])">
+            <ddaplib-entity-viewer [listData]="modifiedListData[val]" class="wd-100"></ddaplib-entity-viewer>
+          </div>
           <ng-template *ngTemplateOutlet="linkTextContainer; context: {$implicit: modifiedListData[val]}"></ng-template>
         </div>
       </mat-list-item>
@@ -31,7 +28,7 @@
 </ng-template>
 
 <ng-template #linkTextContainer let-value>
-  <div class="flex flex--column item-row--value" *ngIf="isString(value)">
+  <div class="fg-2" *ngIf="isString(value)">
     <a target="_blank" [href]="value" *ngIf="isLink(value)">{{value}}</a>
     <ng-container *ngIf="!isLink(value)">{{value}}</ng-container>
   </div>

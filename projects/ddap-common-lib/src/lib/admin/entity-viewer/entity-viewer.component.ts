@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import _startcase from 'lodash.startcase';
 
 @Component({
   selector: 'ddaplib-entity-viewer',
@@ -63,5 +64,9 @@ export class EntityViewerComponent implements OnInit {
       return [listData.join(', ')];
     }
     return listData;
+  }
+
+  formatVal(val: string) {
+    return /^\w*$/.test(val) ? _startcase(val) : val;
   }
 }
