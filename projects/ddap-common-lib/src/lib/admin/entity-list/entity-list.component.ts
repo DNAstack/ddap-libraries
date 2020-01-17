@@ -45,4 +45,8 @@ export class EntityListComponent {
     }
     return _get(entity, this.descriptionProperty, '');
   }
+
+  getEntityDescription(entity: object) {
+    return _get(entity, 'dto.ui.description');
+  }
 }

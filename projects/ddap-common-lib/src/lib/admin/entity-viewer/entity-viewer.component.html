@@ -9,26 +9,23 @@
   </ng-container>
 </ng-template>
 <ng-template #notArray>
-  <mat-list>
+  <h4>{{description}}</h4>
     <ng-container *ngFor="let val of objKeys(modifiedListData)">
-      <mat-list-item>
-        <div class="flex item-row" [ngClass]="!isObject(modifiedListData[val]) ? 'flex--row' : 'flex--column'">
-          <div [ngClass]="isObject(modifiedListData[val]) ? 'fg-2': 'fg-1'">
-            {{formatVal(val)}}
-          </div>
-          <div [ngClass]="isObject(modifiedListData[val]) ? 'flex flex--row' : 'fg-2'"
-               *ngIf="isArray(modifiedListData[val]) || isObject(modifiedListData[val])">
-            <ddaplib-entity-viewer [listData]="modifiedListData[val]" class="wd-100"></ddaplib-entity-viewer>
-          </div>
-          <ng-template *ngTemplateOutlet="linkTextContainer; context: {$implicit: modifiedListData[val]}"></ng-template>
+      <div class="flex item-row" [ngClass]="!isObject(modifiedListData[val]) ? 'flex--row' : 'flex--column'">
+        <div [ngClass]="isObject(modifiedListData[val]) ? 'fg-2': 'fg-1'">
+          {{formatVal(val)}}
         </div>
-      </mat-list-item>
+        <div [ngClass]="isObject(modifiedListData[val]) ? 'flex flex--row' : 'fg-2'"
+             *ngIf="isArray(modifiedListData[val]) || isObject(modifiedListData[val])">
+          <ddaplib-entity-viewer [listData]="modifiedListData[val]" class="wd-100"></ddaplib-entity-viewer>
+        </div>
+        <ng-template *ngTemplateOutlet="linkTextContainer; context: {$implicit: modifiedListData[val]}"></ng-template>
+      </div>
     </ng-container>
-  </mat-list>
 </ng-template>
 
 <ng-template #linkTextContainer let-value>
-  <div class="fg-2" *ngIf="isString(value)">
+  <div class="fg-2 item-row--value" *ngIf="isString(value)">
     <a target="_blank" [href]="value" *ngIf="isLink(value)">{{value}}</a>
     <ng-container *ngIf="!isLink(value)">{{value}}</ng-container>
   </div>

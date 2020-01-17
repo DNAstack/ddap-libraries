@@ -13,12 +13,19 @@ export class EntityViewerComponent implements OnInit {
   @Input()
   listData;
 
+  @Input()
+  description;
+
   modifiedListData;
 
   ngOnInit() {
     this.modifiedListData = this.isArray(this.listData)
                             ? this.modifyArray(this.listData)
                             : this.modifyObj(this.listData);
+  }
+
+  getDescription(){
+    console.log(this.listData);
   }
 
   objKeys(obj): string[] {
@@ -49,11 +56,11 @@ export class EntityViewerComponent implements OnInit {
   private modifyObj(obj, updatedObj?) {
     let newObj = updatedObj || {};
     for(let[key, value] of Object.entries(obj)) {
-      if(key !== 'ui') {
-        newObj[key] = value
-      }
-      else {
+      if(key === 'ui') {
         this.modifyObj(value, newObj)
+      }
+      else if(key !== 'label' && key !== 'description'){
+        newObj[key] = value
       }
     }
     return newObj;

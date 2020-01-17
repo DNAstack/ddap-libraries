@@ -28,7 +28,7 @@
         </ng-template>
         <ng-template #notJsonEditor>
           <mat-divider></mat-divider>
-          <ddaplib-entity-viewer [listData]="entity.dto"></ddaplib-entity-viewer>
+          <ddaplib-entity-viewer [listData]="entity.dto" [description]="getEntityDescription(entity)"></ddaplib-entity-viewer>
         </ng-template>
         <mat-action-row>
           <button mat-button
