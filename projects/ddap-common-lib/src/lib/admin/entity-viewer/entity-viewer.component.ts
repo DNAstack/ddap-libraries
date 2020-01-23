@@ -24,10 +24,6 @@ export class EntityViewerComponent implements OnInit {
                             : this.modifyObj(this.listData);
   }
 
-  getDescription(){
-    console.log(this.listData);
-  }
-
   objKeys(obj): string[] {
     return Object.keys(obj)
   }
@@ -53,7 +49,7 @@ export class EntityViewerComponent implements OnInit {
     }
   }
 
-  private modifyObj(obj, updatedObj?) {
+  public modifyObj(obj, updatedObj?) {
     let newObj = updatedObj || {};
     for(let[key, value] of Object.entries(obj)) {
       if(key === 'ui') {

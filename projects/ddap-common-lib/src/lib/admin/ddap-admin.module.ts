@@ -14,6 +14,8 @@ import { EntityDescriptionLinkComponent } from "./entity-description/entity-desc
 import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { EntityViewerComponent } from './entity-viewer/entity-viewer.component';
+import { ServiceDefinitionComponent } from './service-definition/service-definition.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { EntityViewerComponent } from './entity-viewer/entity-viewer.component';
     EntityListComponent,
     OptionEditableListComponent,
     EntityViewerComponent,
+    ServiceDefinitionComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { EntityViewerComponent } from './entity-viewer/entity-viewer.component';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
+    MatCardModule
   ],
   exports: [
     EntityDescriptionComponent,

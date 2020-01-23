@@ -1,0 +1,20 @@
+<mat-divider></mat-divider>
+<div class="flex flex--row">
+  <div class="fg-1 left-column">
+    <ddaplib-entity-viewer [listData]="modifiedData" [description]="description"></ddaplib-entity-viewer>
+  </div>
+  <div class="fg-2">
+    <div *ngIf="objKeys(interfaceData).length > 0" class="column-item interface">
+      <h4>Interfaces</h4>
+      <div class="flex flex--column">
+        <ddaplib-entity-viewer [listData]="interfaceData" [description]="''"></ddaplib-entity-viewer>
+      </div>
+    </div>
+    <div *ngIf="objKeys(rolesData).length > 0" class="column-item">
+      <h4>Roles</h4>
+      <div class="flex flex--column">
+        <ddaplib-entity-viewer [listData]="rolesData" [description]="''"></ddaplib-entity-viewer>
+      </div>
+    </div>
+  </div>
+</div>

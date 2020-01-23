@@ -23,13 +23,26 @@
             </div>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <ng-template [ngIf]="useJsonEditor" [ngIfElse]="notJsonEditor">
-          <json-editor [options]="editorOptions" [data]="entity.dto"></json-editor>
-        </ng-template>
-        <ng-template #notJsonEditor>
-          <mat-divider></mat-divider>
-          <ddaplib-entity-viewer [listData]="entity.dto" [description]="getEntityDescription(entity)"></ddaplib-entity-viewer>
-        </ng-template>
+        <ng-container [ngSwitch]="listType">
+          <ddaplib-service-definition *ngSwitchCase="'service'"
+                                      [listData]="entity.dto"
+                                      [description]="getEntityDescription(entity)">
+          </ddaplib-service-definition>
+          <json-editor *ngSwitchCase="'json'"
+                       [options]="editorOptions"
+                       [data]="entity.dto">
+          </json-editor>
+          <ddaplib-access-policies *ngSwitchCase="'policies'"
+                                   [listData]="entity.dto"
+                                   [description]="getEntityDescription(entity)">
+          </ddaplib-access-policies>
+          <ng-container *ngSwitchDefault>
+            <mat-divider></mat-divider>
+            <ddaplib-entity-viewer [listData]="entity.dto"
+                                   [description]="getEntityDescription(entity)">
+            </ddaplib-entity-viewer>
+          </ng-container>
+        </ng-container>
         <mat-action-row>
           <button mat-button
                   [routerLink]="[entity.name]"
