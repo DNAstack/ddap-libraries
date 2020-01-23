@@ -26,7 +26,7 @@ export class EntityListComponent {
   @Input()
   editorOptions: JsonEditorOptions | any;
   @Input()
-  useJsonEditor: boolean = false;
+  listType: string;
 
   @ViewChild(JsonEditorComponent, { static: false })
   editor: JsonEditorComponent;
@@ -44,5 +44,9 @@ export class EntityListComponent {
       return;
     }
     return _get(entity, this.descriptionProperty, '');
+  }
+
+  getEntityDescription(entity: object) {
+    return _get(entity, 'dto.ui.description');
   }
 }

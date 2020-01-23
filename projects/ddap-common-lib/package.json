@@ -18,6 +18,7 @@
     "dayjs": "^1.8.16",
     "jsoneditor": "^7.0.4",
     "lodash.get": "^4.4.2",
+    "lodash.startcase": "^4.4.0",
     "ngx-webstorage-service": "^4.1.0",
     "rxjs": "~6.5.3"
   }

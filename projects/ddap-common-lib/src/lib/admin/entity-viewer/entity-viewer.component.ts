@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import _startcase from 'lodash.startcase';
 
 @Component({
   selector: 'ddaplib-entity-viewer',
@@ -11,6 +12,9 @@ export class EntityViewerComponent implements OnInit {
 
   @Input()
   listData;
+
+  @Input()
+  description;
 
   modifiedListData;
 
@@ -45,14 +49,14 @@ export class EntityViewerComponent implements OnInit {
     }
   }
 
-  private modifyObj(obj, updatedObj?) {
+  public modifyObj(obj, updatedObj?) {
     let newObj = updatedObj || {};
     for(let[key, value] of Object.entries(obj)) {
-      if(key !== 'ui') {
-        newObj[key] = value
-      }
-      else {
+      if(key === 'ui') {
         this.modifyObj(value, newObj)
+      }
+      else if(key !== 'label' && key !== 'description'){
+        newObj[key] = value
       }
     }
     return newObj;
@@ -63,5 +67,9 @@ export class EntityViewerComponent implements OnInit {
       return [listData.join(', ')];
     }
     return listData;
+  }
+
+  formatVal(val: string) {
+    return /^\w*$/.test(val) ? _startcase(val) : val;
   }
 }

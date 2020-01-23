@@ -11,9 +11,7 @@
     padding-right: 1rem;
   }
   .item-row--value {
-    padding-left: 1rem;
     word-break: break-all;
-    width: 70%;
     font-size: 0.9rem;
     color: $color-dark-grey;
   }
@@ -34,3 +32,10 @@
   width: 100%;
   position: relative;
 }
+.fg-2 {
+  flex: 2;
+}
+.fg-1 {
+  flex: 1;
+}
+
