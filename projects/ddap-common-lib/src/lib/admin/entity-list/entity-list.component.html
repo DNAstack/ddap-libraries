@@ -32,10 +32,6 @@
                        [options]="editorOptions"
                        [data]="entity.dto">
           </json-editor>
-          <ddaplib-access-policies *ngSwitchCase="'policies'"
-                                   [listData]="entity.dto"
-                                   [description]="getEntityDescription(entity)">
-          </ddaplib-access-policies>
           <ng-container *ngSwitchDefault>
             <mat-divider></mat-divider>
             <ddaplib-entity-viewer [listData]="entity.dto"
