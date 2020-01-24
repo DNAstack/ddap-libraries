@@ -44,6 +44,7 @@ import {MatCardModule} from "@angular/material/card";
     EntityDescriptionLinkComponent,
     EntityListComponent,
     OptionEditableListComponent,
+    EntityViewerComponent
   ]
 })
 export class DdapAdminModule { }
