@@ -1,4 +1,5 @@
-import { FormGroup } from '@angular/forms';
+import { AbstractControl, FormGroup } from '@angular/forms';
+import { MatExpansionPanel } from '@angular/material';
 
 export interface Form {
   getAllForms(): FormGroup[];
@@ -35,7 +36,7 @@ export function removeInternalFields(model: { [ key: string]: string }, fieldsTo
   return model;
 }
 
-export function alignControlsWithModelDefinitions(formGroups: FormGroup[]) {
+export function alignControlsWithModelDefinitions(formGroups: FormGroup[]): void {
   formGroups.forEach((formGroup) => {
     Object.entries(formGroup.controls)
       .forEach(([currentControlId, control]: any) => {
@@ -45,11 +46,21 @@ export function alignControlsWithModelDefinitions(formGroups: FormGroup[]) {
   });
 }
 
-function changeControlId(formGroup: FormGroup, currentId, newId) {
+function changeControlId(formGroup: FormGroup, currentId, newId): void {
   if (currentId !== newId) {
     formGroup.addControl(newId, formGroup.get(currentId));
     formGroup.removeControl(currentId);
   }
+}
+
+export function isExpanded(control: AbstractControl, expansionPanel: MatExpansionPanel): boolean {
+  if (expansionPanel.expanded) {
+    return true;
+  }
+  if (control.invalid) {
+    return true;
+  }
+  return expansionPanel.expanded;
 }
 
 export default Form;
