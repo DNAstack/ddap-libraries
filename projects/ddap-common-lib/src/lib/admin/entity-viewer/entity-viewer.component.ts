@@ -50,12 +50,14 @@ export class EntityViewerComponent implements OnInit {
   }
 
   public modifyObj(obj, updatedObj?) {
-    let newObj = updatedObj || {};
-    for(let[key, value] of Object.entries(obj)) {
+    let newObj = updatedObj || {},
+        key: any,
+        value: any;
+    for([key, value] of Object.entries(obj)) {
       if(key === 'ui') {
         this.modifyObj(value, newObj)
       }
-      else if(key !== 'label' && key !== 'description'){
+      else if(key !== 'label' && key !== 'description' && value.length > 0){
         newObj[key] = value
       }
     }

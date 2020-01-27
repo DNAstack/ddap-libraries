@@ -1,0 +1,53 @@
+@import "./../../../../styles/modules/colors";
+
+.fg-1 {
+  flex: 1;
+  padding: 0.5rem;
+}
+.fg-2{
+  flex: 2;
+}
+.right-column {
+  border-left: 1px solid $color-faded-grey;
+}
+
+.inline-icon {
+  height: 1rem;
+  width: 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+p {
+  span {
+    color: $color-grey;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.timeline {
+  margin-left: 2.5rem;
+}
+
+.outer-condition {
+  margin: 0;
+}
+
+.variable-def {
+  align-items: baseline;
+
+  .fg-1 {
+    padding-left: 0;
+  }
+}

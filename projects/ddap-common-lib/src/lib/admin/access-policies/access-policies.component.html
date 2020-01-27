@@ -1,0 +1,30 @@
+<mat-divider></mat-divider>
+<div class="flex flex--row">
+  <div class="fg-1">
+    <h4>Multiple conditions <span>(<mat-icon class="inline-icon icon-claims"></mat-icon>)</span> act like logical OR
+      clauses, while inner set of conditions act like logical AND clauses</h4>
+    <div *ngFor="let policy of policyData">
+      <h3 class="flex vertical-center outer-condition">
+        <mat-icon class="icon icon-claims"></mat-icon>
+      </h3>
+      <ul *ngFor="let condition of objKeys(policy)" class="timeline">
+        <li *ngFor="let clause of policy[condition]" class="event">
+          <div class="line"></div>
+          <h4>{{clause.type}}</h4>
+          <p *ngIf="clause.value">value: <span>{{removePrefix(clause.value)}}</span></p>
+          <p *ngIf="clause.source">source: <span>{{removePrefix(clause.source)}}</span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="fg-1" [ngClass]="{'right-column': showRightColumn(listData['ui'], variableDefinitions)}">
+    <ddaplib-entity-viewer [listData]="listData['ui']"></ddaplib-entity-viewer>
+    <ng-container *ngIf="variableDefinitions">
+      <h4>Variable Definitions</h4>
+      <div class="flex variable-def" *ngFor="let variable of objKeys(variableDefinitions)">
+        <div class="fg-1">{{variable}}</div>
+        <div class="fg-2">{{variableDefinitions[variable]['ui']['description']}}</div>
+      </div>
+    </ng-container>
+  </div>
+</div>
