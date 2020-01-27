@@ -16,6 +16,7 @@ import { MatListModule } from "@angular/material/list";
 import { EntityViewerComponent } from './entity-viewer/entity-viewer.component';
 import { ServiceDefinitionComponent } from './service-definition/service-definition.component';
 import {MatCardModule} from "@angular/material/card";
+import {AccessPoliciesComponent} from "./access-policies/access-policies.component";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {MatCardModule} from "@angular/material/card";
     OptionEditableListComponent,
     EntityViewerComponent,
     ServiceDefinitionComponent,
+    AccessPoliciesComponent
   ],
   imports: [
     CommonModule,

@@ -28,6 +28,10 @@
                                       [listData]="entity.dto"
                                       [description]="getEntityDescription(entity)">
           </ddaplib-service-definition>
+          <ddaplib-access-policies *ngSwitchCase="'policies'"
+                                   [listData]="entity.dto"
+                                   [description]="getEntityDescription(entity)">
+          </ddaplib-access-policies>
           <json-editor *ngSwitchCase="'json'"
                        [options]="editorOptions"
                        [data]="entity.dto">
