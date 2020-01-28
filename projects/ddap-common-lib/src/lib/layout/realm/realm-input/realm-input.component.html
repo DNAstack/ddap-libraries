@@ -4,13 +4,25 @@
   <mat-form-field>
     <mat-label>Realm</mat-label>
     <input matInput
+           #realmInput
            data-se="realm-input"
            formControlName="realm"
+           [readonly]="isReadOnly"
+           autocomplete="off"
            (change)="openRealmChangeConfirmationDialog('edit')">
     <mat-error *ngIf="form.get('realm').invalid">Realm name must be 3-46 characters and alphanumeric</mat-error>
-    <mat-icon *ngIf="actions.indexOf('edit') !== -1" matSuffix class="icon icon-edit"></mat-icon>
-    <mat-icon matSuffix class="icon icon-close"
+    <mat-icon matSuffix svgIcon="more-vert" [matMenuTriggerFor]="actionsMenu"></mat-icon>
+    <mat-menu #actionsMenu="matMenu">
+      <button mat-menu-item
+              *ngIf="actions.indexOf('edit') !== -1"
+              (click)="toggleReadonly()">
+        Edit
+      </button>
+      <button mat-menu-item
               *ngIf="(realm !== 'master' && actions.indexOf('delete') !== -1)"
-              (click)="openRealmChangeConfirmationDialog('delete')"></mat-icon>
+              (click)="openRealmChangeConfirmationDialog('delete')">
+        Delete
+      </button>
+    </mat-menu>
   </mat-form-field>
 </form>

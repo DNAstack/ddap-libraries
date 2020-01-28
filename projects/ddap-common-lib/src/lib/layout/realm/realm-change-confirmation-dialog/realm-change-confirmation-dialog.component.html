@@ -2,6 +2,9 @@
 <mat-dialog-content *ngIf="data.action === 'edit'">
   Changing realm to <b>{{ data.realm }}</b> will log you out of your current session.
 </mat-dialog-content>
+<mat-dialog-content *ngIf="data.action === 'delete'">
+  Deleting realm will delete all the config changes in the realm.
+</mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button
           mat-dialog-close

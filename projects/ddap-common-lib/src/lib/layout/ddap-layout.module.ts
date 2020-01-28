@@ -20,6 +20,7 @@ import { RealmChangeConfirmationDialogComponent } from './realm/realm-change-con
 import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   exports: [
     HeaderComponent,
