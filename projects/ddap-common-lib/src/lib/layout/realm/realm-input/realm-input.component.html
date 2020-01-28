@@ -11,14 +11,16 @@
            autocomplete="off"
            (change)="openRealmChangeConfirmationDialog('edit')">
     <mat-error *ngIf="form.get('realm').invalid">Realm name must be 3-46 characters and alphanumeric</mat-error>
-    <mat-icon matSuffix svgIcon="more-vert" [matMenuTriggerFor]="actionsMenu"></mat-icon>
+    <mat-icon matSuffix svgIcon="more-vert" data-se="realm-menu" [matMenuTriggerFor]="actionsMenu"></mat-icon>
     <mat-menu #actionsMenu="matMenu">
       <button mat-menu-item
+              data-se="edit-realm"
               *ngIf="actions.indexOf('edit') !== -1"
               (click)="toggleReadonly()">
         Edit
       </button>
       <button mat-menu-item
+              data-se="delete-realm"
               *ngIf="(realm !== 'master' && actions.indexOf('delete') !== -1)"
               (click)="openRealmChangeConfirmationDialog('delete')">
         Delete
