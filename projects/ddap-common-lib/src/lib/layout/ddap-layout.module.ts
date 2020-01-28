@@ -14,6 +14,13 @@ import { RealmInterceptor } from './realm/realm-interceptor.service';
 import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
 import { MatCardModule, MatPaginatorModule } from '@angular/material';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { RealmInputComponent } from './realm/realm-input/realm-input.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { RealmChangeConfirmationDialogComponent } from './realm/realm-change-confirmation-dialog/realm-change-confirmation-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -25,6 +32,8 @@ import { PaginatorComponent } from './paginator/paginator.component';
     PaginatorComponent,
     SandboxBannerComponent,
     SearchableHeaderComponent,
+    RealmInputComponent,
+    RealmChangeConfirmationDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +42,11 @@ import { PaginatorComponent } from './paginator/paginator.component';
     MatButtonModule,
     MatCardModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatMenuModule
   ],
   exports: [
     HeaderComponent,
@@ -43,6 +57,11 @@ import { PaginatorComponent } from './paginator/paginator.component';
     PaginatorComponent,
     SandboxBannerComponent,
     SearchableHeaderComponent,
+    RealmInputComponent,
+    RealmChangeConfirmationDialogComponent
+  ],
+  entryComponents: [
+    RealmChangeConfirmationDialogComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RealmInterceptor, multi: true },
