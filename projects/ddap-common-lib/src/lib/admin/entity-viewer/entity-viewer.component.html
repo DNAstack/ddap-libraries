@@ -1,3 +1,8 @@
+<h4 *ngIf="description">{{description}}</h4>
+<div class="flex item-row" *ngIf="name">
+  <div class="fg-1">Name</div>
+  <div class="fg-2 item-row--value">{{name}}</div>
+</div>
 <ng-template [ngIf]="isArray(modifiedListData)" [ngIfElse]="notArray">
   <ng-container *ngFor="let val of modifiedListData">
       <div class="flex flex--column"
@@ -9,7 +14,6 @@
   </ng-container>
 </ng-template>
 <ng-template #notArray>
-  <h4>{{description}}</h4>
     <ng-container *ngFor="let val of objKeys(modifiedListData)">
       <div class="flex item-row" [ngClass]="!isObject(modifiedListData[val]) ? 'flex--row' : 'flex--column'">
         <div [ngClass]="isObject(modifiedListData[val]) ? 'fg-2': 'fg-1'">

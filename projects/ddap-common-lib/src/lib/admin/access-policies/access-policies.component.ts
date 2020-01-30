@@ -14,6 +14,9 @@ export class AccessPoliciesComponent extends EntityViewerComponent implements On
 
   @Input()
   listData;
+  @Input()
+  name?;
+
   variableDefinitions: any;
   policyData: object[] = [];
 

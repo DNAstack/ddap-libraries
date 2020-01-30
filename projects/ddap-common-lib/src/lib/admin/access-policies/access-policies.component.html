@@ -18,6 +18,10 @@
     </div>
   </div>
   <div class="fg-1" [ngClass]="{'right-column': showRightColumn(listData['ui'], variableDefinitions)}">
+    <div class="flex variable-def">
+      <div class="fg-1">Name</div>
+      <div class="fg-2">{{name}}</div>
+    </div>
     <ddaplib-entity-viewer [listData]="listData['ui']"></ddaplib-entity-viewer>
     <ng-container *ngIf="variableDefinitions">
       <h4>Variable Definitions</h4>

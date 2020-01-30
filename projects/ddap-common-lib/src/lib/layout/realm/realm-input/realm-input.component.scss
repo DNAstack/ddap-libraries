@@ -22,4 +22,8 @@
       position: relative;
     }
   }
+
+  input[readonly] {
+    cursor: default;
+  }
 }
