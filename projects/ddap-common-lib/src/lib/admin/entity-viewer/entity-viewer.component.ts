@@ -16,6 +16,9 @@ export class EntityViewerComponent implements OnInit {
   @Input()
   description;
 
+  @Input()
+  name?;
+
   modifiedListData;
 
   ngOnInit() {

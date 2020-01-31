@@ -25,10 +25,12 @@
         </mat-expansion-panel-header>
         <ng-container [ngSwitch]="listType">
           <ddaplib-service-definition *ngSwitchCase="'service'"
+                                      [name]="entity.name"
                                       [listData]="entity.dto"
                                       [description]="getEntityDescription(entity)">
           </ddaplib-service-definition>
           <ddaplib-access-policies *ngSwitchCase="'policies'"
+                                   [name]="entity.name"
                                    [listData]="entity.dto"
                                    [description]="getEntityDescription(entity)">
           </ddaplib-access-policies>
@@ -39,6 +41,7 @@
           <ng-container *ngSwitchDefault>
             <mat-divider></mat-divider>
             <ddaplib-entity-viewer [listData]="entity.dto"
+                                   [name]="entity.name"
                                    [description]="getEntityDescription(entity)">
             </ddaplib-entity-viewer>
           </ng-container>

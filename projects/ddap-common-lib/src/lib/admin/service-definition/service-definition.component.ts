@@ -19,6 +19,9 @@ export class ServiceDefinitionComponent extends EntityViewerComponent implements
   @Input()
   description;
 
+  @Input()
+  name?;
+
   modifiedData = {};
   rolesData = {};
   interfaceData = {};
@@ -27,6 +30,7 @@ export class ServiceDefinitionComponent extends EntityViewerComponent implements
   }
 
   private modifyObject() {
+    this.modifiedData['name'] = this.name;
     for(let[key, value] of Object.entries(this.listData)) {
       if(typeof value !== 'object') {
         this.modifiedData[key] = value;
