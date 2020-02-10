@@ -26,7 +26,7 @@ import {AccessPoliciesComponent} from "./access-policies/access-policies.compone
     OptionEditableListComponent,
     EntityViewerComponent,
     ServiceDefinitionComponent,
-    AccessPoliciesComponent
+    AccessPoliciesComponent,
   ],
   imports: [
     CommonModule,
