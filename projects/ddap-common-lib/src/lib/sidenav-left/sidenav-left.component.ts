@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ViewControllerService } from '../view-controller/view-controller.service'
  
 @Component({
@@ -7,16 +7,16 @@ import { ViewControllerService } from '../view-controller/view-controller.servic
 })
 export class SidenavLeftComponent {
 
-  public viewController;
+  public viewController : ViewControllerService;
 
   constructor(
-    viewController : ViewControllerService
+     viewController : ViewControllerService
   ) {
-
+    this.viewController = viewController;
   }
 
   closeLeftSideNav() {
-    this.viewController.closeLeftSideNav();
+    this.viewController.closeLeftSidenav();
   }
 
 }

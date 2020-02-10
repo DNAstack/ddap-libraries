@@ -8,16 +8,18 @@ export class ViewControllerService {
   public view = {
     leftSidebarOpened: false
   }
+
+  public apps : AppService[];
   public currentApp : AppService;
 
   constructor() {
   }
 
-  closeLeftSidenav() {
+  public closeLeftSidenav() {
     this.view.leftSidebarOpened = false;
   }
 
-  toggleLeftSidenav() {
+  public toggleLeftSidenav() {
     this.view.leftSidebarOpened = !this.view.leftSidebarOpened;
   }
 }

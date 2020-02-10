@@ -4,6 +4,8 @@ import { MatToolbarModule, MatButtonModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
     RouterModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatMenuModule,
+    MatSidenavModule
   ],
   exports: [
     SidenavLeftComponent

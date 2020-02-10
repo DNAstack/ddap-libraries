@@ -1,19 +1,18 @@
 <mat-toolbar class="toolbar-white" style="position: absolute; top:0; width: 100%">
-    <div>Menu</div>
-    <span class="fill-space"></span>
-    <button matTooltip="Close Menu" tabindex="-1" mat-icon-button (click)="closeLeftSideNav()"><i
-            class="material-icons">close</i></button>
+    <mat-toolbar-row style="display: flex">
+        <div>Menu</div>
+        <span class="fill-space"></span>
+        <button matTooltip="Close Menu" tabindex="-1" mat-icon-button (click)="closeLeftSideNav()"><i
+                class="material-icons">close</i></button>
+    </mat-toolbar-row>
 </mat-toolbar>
 <div style="position:absolute; left:0; right:0; top:64px; bottom:64px; overflow-y: auto">
     <div class="clearfix"></div>
-    <span *ngFor="let section of viewController.currentApp.sections; index as i;">
-        <div *ngIf="section.name" style="padding: 10px 16px 0 16px" class="text-muted">{{section.name}}</div>
-        <button *ngFor="let item of section.items; index as j;" tabindex="-1" mat-menu-item routerLinkActive="active"
-            routerLink="{{item.routerLink}}">
-            <mat-icon>{{item.icon}}</mat-icon>
-            <span>{{item.label}}</span>
-        </button>
-    </span>
+    <button *ngFor="let route of viewController.currentApp.sectionRoutes; index as j;" tabindex="-1" mat-menu-item routerLinkActive="active"
+        routerLink="{{route.routerLink}}">
+        <mat-icon>{{route.icon}}</mat-icon>
+        <span>{{route.label}}</span>
+    </button>
 </div>
 <div class="b-t font-sm" style="position: absolute; bottom:0; height: 64px; width: 100%; z-index: 100; background-color: white; display:flex; flex-direction: row; justify-content: center;">
     <div style="align-self: center;">

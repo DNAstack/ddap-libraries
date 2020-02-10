@@ -4,6 +4,8 @@ $space-lg: 24px;
 $space: 16px;
 $space-sm: 10px;
 
+$sm: 12px;
+
 html, body {
   height: 100%;
 }
@@ -46,6 +48,66 @@ body {
     margin-left: 0.5rem;
   }
 }
+
+/** Links **/
+a {
+  
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/** Fonts **/
+
+.text-muted {
+  color: #4f4f4f;
+}
+
+.mat-toolbar, .mat-card-title, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6 {
+  font-weight: 400 !important;
+}
+
+.h2 {
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.h4 {
+  font-size: 14px;
+  font-weight: 500;
+  /*text-transform: uppercase;*/
+  margin: 0;
+}
+
+.h5 {
+  font-size: 12px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+/** Text **/
+.no-wrap {
+  .mat-header-cell,
+  .mat-header-cell button,
+  .mat-cell {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/** Layout **/
 
 .fill-space {
   flex: 1 1 auto;
@@ -124,3 +186,82 @@ body {
   margin-bottom: $space;
 }
 
+/** Rows **/
+
+.mat-row,
+.mat-header-row {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #CCC;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+}
+
+/** Borders **/
+
+.b-a {
+  border: 1px solid #e0e0e0
+}
+
+.b-b {
+  border-bottom: 1px solid #e0e0e0
+}
+
+.b-t {
+  border-top: 1px solid #e0e0e0
+}
+
+.b-r {
+  border-right: 1px solid #e0e0e0
+}
+
+.b-l {
+  border-left: 1px solid #e0e0e0
+}
+
+/** Toolbars **/
+.toolbar-white {
+  height: 64px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 100;
+}
+
+mat-paginator {
+  background: none !important;
+}
+
+/** Backgrounds **/
+
+.bg-white {
+  background: white;
+}
+
+/** Buttons **/
+button:focus { outline: none; }
+
+/** Cards **/
+
+.mat-card {
+  border-radius: 0px;
+}
+
+/** Tables **/
+
+.mat-table:not([class*='mat-elevation-z']),
+.mat-card:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+  /*-webkit-box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);
+  box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);*/
+  /*box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);*/
+  border: 1px solid #e0e0e0;
+}
+
+/** Menus **/
+.mat-menu-panel {
+  min-width: 112px !important;
+  max-width: 500px !important;
+}
