@@ -1,7 +1,13 @@
-export interface AppService {
+export class AppService {
   name: string;
   appRoute: ButtonRoute;
   sectionRoutes: ButtonRoute[];
+
+  constructor(name:string, appRoute:ButtonRoute, sectionRoutes:ButtonRoute[]) {
+    this.name = name;
+    this.appRoute = appRoute;
+    this.sectionRoutes = sectionRoutes;
+  }
 }
 
 export class ButtonRoute {

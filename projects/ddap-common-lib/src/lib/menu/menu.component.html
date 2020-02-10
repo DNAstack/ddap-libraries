@@ -4,23 +4,30 @@
         <mat-icon>apps</mat-icon>
     </button>
     <mat-menu tabindex="-1" #productMenu="matMenu">
-        <div *ngFor="let section of sections; let i = index" style="min-width:200px">
-            <mat-divider *ngIf="i > 0" class="m-b-sm m-t-sm"></mat-divider>
-            <div style="min-width:200px" class="m-s m-t-sm m-b-sm">{{section.name}}</div>
-            <button *ngFor="let item of section.items" routerLink="./{{item.routerLink}}" routerLinkActive="active"
+            <div style="min-width:200px" class="m-s m-t-sm m-b-sm">Apps</div>
+            <button *ngFor="let app of viewController.apps" (click)="selectApp(app)" routerLink="./{{app.appRoute.routerLink}}" routerLinkActive="active"
                 tabindex="-1" mat-menu-item>
-                <mat-icon>{{item.icon}}</mat-icon>
-                <span>{{item.label}}</span>
+                <mat-icon>{{app.appRoute.icon}}</mat-icon>
+                <span>{{app.appRoute.label}}</span>
             </button>
-        </div>
+            <span *ngIf="manageApp">
+                <mat-divider  class="m-b-sm m-t-sm"></mat-divider>
+                <div style="min-width:200px" class="m-s m-t-sm m-b-sm">Administrators</div>
+                <button (click)="selectApp(manageApp)" routerLink="./{{manageApp.appRoute.routerLink}}" routerLinkActive="active"
+                    tabindex="-1" mat-menu-item>
+                    <mat-icon>{{manageApp.appRoute.icon}}</mat-icon>
+                    <span>{{manageApp.appRoute.label}}</span>
+                </button>
+            </span>
+            
     </mat-menu>
-    <a class="m-r-sm" routerLink="/">{{sitename}}</a>
+    <a class="m-r-sm" routerLink="/">{{sitename}} </a>
     <div class="m-r">{{appname}}</div>
     <span class="fill-space"></span>
     <button tabindex="-1" matTooltip="Toggle User Menu" class="m-r-sm" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img style="border-radius: 50%; width:36px; padding-bottom:2px"
-            src="https://avatars1.githubusercontent.com/u/1750272?v=3&s=460" />
-        <!--<mat-icon>face</mat-icon>-->
+        <!--<img style="border-radius: 50%; width:36px; padding-bottom:2px"
+            src="https://avatars1.githubusercontent.com/u/1750272?v=3&s=460" />-->
+        <mat-icon>face</mat-icon>
     </button>
     <mat-menu tabindex="-1" #userMenu="matMenu">
         <button routerLink="/curious/identities" tabindex="-1" mat-menu-item>
@@ -33,6 +40,4 @@
             <span>Sign Out</span>
         </button>
     </mat-menu>
-    <!--<button matTooltip="Toggle Workflow Executor" class="m-r-sm" mat-icon-button (click)="toggleRightSideNav()"><i
-            class="material-icons">cloud_queue</i></button>-->
 </mat-toolbar>
