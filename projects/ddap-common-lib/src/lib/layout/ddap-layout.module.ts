@@ -33,8 +33,8 @@ import {MatMenuModule} from "@angular/material/menu";
     SandboxBannerComponent,
     SearchableHeaderComponent,
     RealmInputComponent,
-    RealmChangeConfirmationDialogComponent,
-  ],
+    RealmChangeConfirmationDialogComponent
+    ],
   imports: [
     CommonModule,
     RouterModule,

@@ -1,5 +1,9 @@
 @import 'base';
 
+$space-lg: 24px;
+$space: 16px;
+$space-sm: 10px;
+
 html, body {
   height: 100%;
 }
@@ -42,3 +46,81 @@ body {
     margin-left: 0.5rem;
   }
 }
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+/** Spacing **/
+
+.m-l-lg {
+  margin-left: $space-lg;
+}
+
+.m-l-sm {
+  margin-left: $space-sm;
+}
+
+.m-r-lg {
+  margin-right: $space-lg;
+}
+
+.m-r-sm {
+  margin-right: $space-sm;
+}
+
+.m-b-lg {
+  margin-bottom: $space-lg;
+}
+
+.m-b-sm {
+  margin-bottom: $space-sm;
+}
+
+.m-b {
+  margin-bottom: $space;
+}
+
+.m-r {
+  margin-right: $space;
+}
+
+.m-l {
+  margin-left: $space;
+}
+
+.m-t {
+  margin-top: $space;
+}
+
+.m-t-sm {
+  margin-top: $space-sm;
+}
+
+.p-a {
+  padding: $space;
+}
+
+.p-a-sm {
+  padding: $space-sm;
+}
+
+.m-a {
+  margin: $space;
+}
+
+.m-s {
+  margin-left: $space;
+  margin-right: $space;
+}
+
+.m-s-sm {
+  margin-left: $space-sm;
+  margin-right: $space-sm;
+}
+
+.m-v {
+  margin-top: $space;
+  margin-bottom: $space;
+}
+
