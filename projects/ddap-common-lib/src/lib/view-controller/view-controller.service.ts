@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AppService } from "../app/app.service";
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable()
 export class ViewControllerService {
@@ -11,8 +12,11 @@ export class ViewControllerService {
 
   public apps : AppService[];
   public currentApp : AppService;
+  public realm : string;
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute) {
+    this.realm = this.route.root.firstChild.snapshot.params.realmId;
   }
 
   public closeLeftSidenav() {

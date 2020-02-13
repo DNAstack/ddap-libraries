@@ -186,6 +186,7 @@ a {
   margin-bottom: $space;
 }
 
+
 /** Rows **/
 
 .mat-row,
@@ -264,4 +265,10 @@ button:focus { outline: none; }
 .mat-menu-panel {
   min-width: 112px !important;
   max-width: 500px !important;
+}
+
+/** Overrides **/
+
+.mat-stepper-vertical {
+  border: 1px solid #e0e0e0
 }

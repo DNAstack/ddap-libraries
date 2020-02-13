@@ -5,7 +5,7 @@
     </button>
     <mat-menu tabindex="-1" #productMenu="matMenu">
             <div style="min-width:200px" class="m-s m-t-sm m-b-sm">Apps</div>
-            <button *ngFor="let app of viewController.apps" (click)="selectApp(app)" routerLink="./{{app.appRoute.routerLink}}" routerLinkActive="active"
+            <button *ngFor="let app of viewController.apps" (click)="selectApp(app)" routerLink="/{{viewController.realm}}/{{app.appRoute.routerLink}}" routerLinkActive="active"
                 tabindex="-1" mat-menu-item>
                 <mat-icon>{{app.appRoute.icon}}</mat-icon>
                 <span>{{app.appRoute.label}}</span>
@@ -13,7 +13,7 @@
             <span *ngIf="manageApp">
                 <mat-divider  class="m-b-sm m-t-sm"></mat-divider>
                 <div style="min-width:200px" class="m-s m-t-sm m-b-sm">Administrators</div>
-                <button (click)="selectApp(manageApp)" routerLink="./{{manageApp.appRoute.routerLink}}" routerLinkActive="active"
+                <button (click)="selectApp(manageApp)" routerLink="/{{viewController.realm}}/{{manageApp.appRoute.routerLink}}" routerLinkActive="active"
                     tabindex="-1" mat-menu-item>
                     <mat-icon>{{manageApp.appRoute.icon}}</mat-icon>
                     <span>{{manageApp.appRoute.label}}</span>
