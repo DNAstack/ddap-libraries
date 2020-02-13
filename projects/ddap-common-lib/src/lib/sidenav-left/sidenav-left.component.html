@@ -9,7 +9,8 @@
 <div style="position:absolute; left:0; right:0; top:64px; bottom:64px; overflow-y: auto">
     <div class="clearfix"></div>
     <button *ngFor="let route of viewController.currentApp.sectionRoutes; index as j;" tabindex="-1" mat-menu-item routerLinkActive="active"
-        routerLink="{{route.routerLink}}">
+        routerLink="/{{viewController.realm}}/{{route.routerLink}}"
+        >
         <mat-icon>{{route.icon}}</mat-icon>
         <span>{{route.label}}</span>
     </button>
