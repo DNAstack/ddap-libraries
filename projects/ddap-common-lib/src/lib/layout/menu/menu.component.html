@@ -1,4 +1,8 @@
 <mat-toolbar color="primary" style="height:64px">
+    <button matTooltip="Toggle Menu" tabindex="-1" mat-icon-button (click)="toggleLeftSideNav()"><mat-icon>menu</mat-icon></button>
+    <a class="m-r-sm" routerLink="/">{{sitename}} </a>
+    <div class="m-r">{{appname}}</div>
+    <span class="fill-space"></span>
     <button tabindex="-1" matTooltip="Toggle Product Menu" class="m-r-sm" mat-icon-button
         [matMenuTriggerFor]="productMenu">
         <mat-icon>apps</mat-icon>
@@ -21,9 +25,6 @@
             </span>
             
     </mat-menu>
-    <a class="m-r-sm" routerLink="/">{{sitename}} </a>
-    <div class="m-r">{{appname}}</div>
-    <span class="fill-space"></span>
     <button tabindex="-1" matTooltip="Toggle User Menu" class="m-r-sm" mat-icon-button [matMenuTriggerFor]="userMenu">
         <!--<img style="border-radius: 50%; width:36px; padding-bottom:2px"
             src="https://avatars1.githubusercontent.com/u/1750272?v=3&s=460" />-->

@@ -12,7 +12,7 @@ import { SearchableHeaderComponent } from "./header/searchable-header.component"
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RealmInterceptor } from './realm/realm-interceptor.service';
 import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
-import { MatCardModule, MatPaginatorModule } from '@angular/material';
+import { MatCardModule, MatPaginatorModule, MatToolbarModule } from '@angular/material';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { RealmInputComponent } from './realm/realm-input/realm-input.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -21,6 +21,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
+import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatMenuModule} from "@angular/material/menu";
     SandboxBannerComponent,
     SearchableHeaderComponent,
     RealmInputComponent,
-    RealmChangeConfirmationDialogComponent
+    RealmChangeConfirmationDialogComponent,
+    SidenavLeftComponent
     ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import {MatMenuModule} from "@angular/material/menu";
     MatDialogModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatToolbarModule
   ],
   exports: [
     HeaderComponent,
@@ -58,7 +61,8 @@ import {MatMenuModule} from "@angular/material/menu";
     SandboxBannerComponent,
     SearchableHeaderComponent,
     RealmInputComponent,
-    RealmChangeConfirmationDialogComponent
+    RealmChangeConfirmationDialogComponent,
+    SidenavLeftComponent
   ],
   entryComponents: [
     RealmChangeConfirmationDialogComponent

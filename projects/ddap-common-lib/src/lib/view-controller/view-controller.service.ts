@@ -2,12 +2,14 @@ import { Injectable } from "@angular/core";
 import { AppService } from "../app/app.service";
 import { ActivatedRoute } from '@angular/router';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ViewControllerService {
 
   public appName : any;
   public view = {
-    leftSidebarOpened: false
+    leftSidebarOpened: true
   }
 
   public apps : AppService[];
