@@ -1,40 +1,24 @@
-<header>
-  <ng-template #baseHeader>
-    <button *ngIf="backLink"
-            data-se="back-link"
-            mat-icon-button>
-      <mat-icon class="icon icon-arrow"
-                [routerLink]="backLink"></mat-icon>
+<mat-toolbar class="toolbar-white" style="height: 64px; position:absolute; top: 0;">
+  <mat-toolbar-row style="display: flex;">
+    <div *ngIf="!searchInputVisible" style="display: flex;">
+      <button *ngIf="backLink"
+          data-se="back-link"
+          mat-icon-button>
+        <mat-icon class="icon icon-arrow"
+                  [routerLink]="backLink"></mat-icon>
+      </button>
+      <mat-icon *ngIf="icon" class="m-r-sm">{{icon}}</mat-icon>
+      <h2 data-se="page-title">{{ label || 'Unknown' }}</h2>
+    </div>
+    <div *ngIf="searchInputVisible">
+      <ng-content></ng-content>
+    </div>
+    <span class="fill-space"></span>
+    <button
+        (click)="displaySearchInput()"
+        mat-icon-button
+        data-se="search-reveal">
+      <mat-icon class="icon icon-search"></mat-icon> 
     </button>
-
-    <mat-icon *ngIf="icon"
-              class="icon"
-              [ngClass]="'icon-' + icon"></mat-icon>
-    <h2 class="stretch"
-        data-se="page-title">{{ label || 'Unknown' }}</h2>
-  </ng-template>
-
-  <ng-container *ngIf="searchInputVisible; else baseHeader">
-    <button *ngIf="isSearchPage"
-            mat-icon-button
-            data-se="search-back-link"
-            (click)="back()">
-      <mat-icon class="icon icon-arrow"></mat-icon>
-    </button>
-
-    <button *ngIf="!isSearchPage"
-            mat-icon-button
-            (click)="closeSearch()">
-      <mat-icon class="icon icon-close"></mat-icon>
-    </button>
-
-    <ng-content></ng-content>
-  </ng-container>
-
-  <button *ngIf="!searchInputVisible"
-          (click)="displaySearchInput()"
-          mat-icon-button
-          data-se="search-reveal">
-    <mat-icon class="icon icon-search"></mat-icon>
-  </button>
-</header>
+  </mat-toolbar-row>
+</mat-toolbar>

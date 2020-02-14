@@ -1,3 +1,11 @@
+$space: 16px;
+$header-size: 64px;
+
 main {
-  padding: 2rem 0;
+  padding: $space;
+  position: absolute; 
+  top: $header-size;
+  left: 0px; 
+  right: 0px;
+  bottom:0;
 }
