@@ -25,4 +25,4 @@ export * from './lib/array-utils';
 export * from './lib/layout/menu/menu.module';
 
 export * from './lib/view-controller/view-controller.service';
-export * from './lib/app/app.service';
+export * from './lib/model/module-metadata.model';

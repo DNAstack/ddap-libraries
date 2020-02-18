@@ -1,20 +1,19 @@
-import { Injectable } from "@angular/core";
-import { AppService } from "../app/app.service";
-import { ActivatedRoute } from '@angular/router';
+import {Injectable} from "@angular/core";
+import {ModuleMetadata} from "../model/module-metadata.model";
+import {ActivatedRoute} from '@angular/router';
+import {ViewFilterInterface} from "./view-filter.interface";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ViewControllerService {
-
-  public appName : any;
   public view = {
-    leftSidebarOpened: true
-  }
+    leftSidebarOpened: true // TODO replace with uiSidebarEnabled* (to be considered)
+  };
 
-  public apps : AppService[];
-  public currentApp : AppService;
-  public realm : string;
+  private appList: ModuleMetadata[] = [];
+  public realm: string; // FIXME
+  private filters: ViewFilterInterface[] = [];
 
   constructor(
     private route: ActivatedRoute) {
@@ -27,5 +26,56 @@ export class ViewControllerService {
 
   public toggleLeftSidenav() {
     this.view.leftSidebarOpened = !this.view.leftSidebarOpened;
+  }
+
+  getRealmId(): string {
+    return this.route.root.firstChild.snapshot.params.realmId;
+  }
+
+  getAllApps(): ModuleMetadata[] {
+    return this.appList.filter(module => module.isApp);
+  }
+
+  getAccessibleApps(): ModuleMetadata[] {
+    if (this.filters.length === 0) {
+      return this.getAllApps();
+    }
+    return this.getAllApps().filter(module => {
+      for (let viewFilter of this.filters) {
+        if (viewFilter.isVisible(module)) {
+          return true;
+        }
+      }
+      return false;
+    });
+  }
+
+  registerModule(metadata: ModuleMetadata) {
+    this.appList.push(metadata);
+    return this;
+  }
+
+  addFilter(filter: ViewFilterInterface) {
+    this.filters.push(filter);
+    return this;
+  }
+
+  getCurrentApp(): ModuleMetadata {
+    if (!this.route.root
+      || !this.route.root.firstChild
+      || !this.route.root.firstChild.firstChild) {
+      return null;
+    }
+    const secondLevelPath = this.route.root.firstChild.firstChild.snapshot.routeConfig.path;
+    for (let app of this.getAllApps()) {
+      if (app.routerLink === secondLevelPath) {
+        return app;
+      }
+    }
+    return null;
+  }
+
+  getSubModuleList(parentKey: string): ModuleMetadata[] {
+    return Object.values(this.appList).filter(module => module.parentKey === parentKey);
   }
 }

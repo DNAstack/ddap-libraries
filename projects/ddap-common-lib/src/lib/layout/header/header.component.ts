@@ -1,6 +1,5 @@
 import { Location } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'ddaplib-header',
@@ -16,12 +15,11 @@ export class HeaderComponent {
   @Input()
   backLink: string;
 
-  constructor(
-    private location: Location,
-    ) {
+  constructor(private location: Location) {
   }
 
   back() {
     this.location.back();
   }
+
 }

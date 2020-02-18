@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar-white" style="height: 64px; position:absolute; top: 0;">
+<mat-toolbar class="toolbar-white">
   <mat-toolbar-row style="display: flex;">
     <div *ngIf="!searchInputVisible" style="display: flex;">
       <button *ngIf="backLink"
@@ -18,7 +18,7 @@
         (click)="displaySearchInput()"
         mat-icon-button
         data-se="search-reveal">
-      <mat-icon class="icon icon-search"></mat-icon> 
+      <mat-icon class="icon icon-search"></mat-icon>
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
