@@ -51,7 +51,7 @@ body {
 
 /** Links **/
 a {
-  
+
   text-decoration: none;
 
   &:hover {
@@ -65,48 +65,8 @@ a {
   color: #4f4f4f;
 }
 
-.mat-toolbar, .mat-card-title, .mat-toolbar h1, .mat-toolbar h2, .mat-toolbar h3, .mat-toolbar h4, .mat-toolbar h5, .mat-toolbar h6 {
-  font-weight: 400 !important;
-}
 
-.h2 {
-  font-size: 22px;
-  font-weight: 400;
-  margin: 0;
-}
-
-.h3 {
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-}
-
-.h4 {
-  font-size: 14px;
-  font-weight: 500;
-  /*text-transform: uppercase;*/
-  margin: 0;
-}
-
-.h5 {
-  font-size: 12px;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
-}
-
-/** Text **/
-.no-wrap {
-  .mat-header-cell,
-  .mat-header-cell button,
-  .mat-cell {
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-
+/** FIXME: rename classes and reduce the use of generic classes **/
 /** Layout **/
 
 .fill-space {
@@ -230,25 +190,6 @@ a {
   z-index: 100;
 }
 
-mat-paginator {
-  background: none !important;
-}
-
-/** Backgrounds **/
-
-.bg-white {
-  background: white;
-}
-
-/** Buttons **/
-button:focus { outline: none; }
-
-/** Cards **/
-
-.mat-card {
-  border-radius: 0px;
-}
-
 /** Tables **/
 
 .mat-table:not([class*='mat-elevation-z']),
@@ -259,12 +200,6 @@ button:focus { outline: none; }
   box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);*/
   /*box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);*/
   border: 1px solid #e0e0e0;
-}
-
-/** Menus **/
-.mat-menu-panel {
-  min-width: 112px !important;
-  max-width: 500px !important;
 }
 
 /** Overrides **/

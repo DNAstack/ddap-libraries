@@ -50,13 +50,13 @@ $mat-primary-color: (
 
 // Navigation
 
-$navbar-main-background: white;
-$navbar-expanded-background: red;
-$navbar-selected-background: green;
-$navbar-font-main-color: black;
-$navbar-font-subtle-color: yellow;
-$navbar-font-accent-color: orange;
-$navbar-icon-font-main-color: purple;
+$navbar-main-background: #fff;
+$navbar-expanded-background: #222322;
+$navbar-selected-background: #000;
+$navbar-font-main-color: #e2e2e2;
+$navbar-font-subtle-color: #aaaaaa;
+$navbar-font-accent-color: #ffffff;
+$navbar-icon-font-main-color: #888888;
 $navbar-border: 1px solid $navbar-font-subtle-color;
 
 // Progress bar

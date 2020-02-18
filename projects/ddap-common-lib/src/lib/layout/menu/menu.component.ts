@@ -1,27 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { ViewControllerService } from '../../view-controller/view-controller.service';
-import { AppService } from '../../app/app.service';
- 
+import {Component, Input} from '@angular/core';
+import {ViewControllerService} from '../../view-controller/view-controller.service';
+import {ModuleMetadata} from '../../model/module-metadata.model';
+
 @Component({
-  selector: 'app-menu',
+  selector: 'ddaplib-main-header',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+  @Input()
+  siteName: string;
 
-  @Input() appname: string; 
-  @Input() sitename : string;
+  public administrativeApps: ModuleMetadata[];
 
-  public manageApp : AppService;
-
-  constructor(
-    public viewController : ViewControllerService
-  ) {
-  }
-
-  selectApp(app) {
-    this.viewController.currentApp = app;
-  }
+  constructor(public viewController: ViewControllerService) {}
 
   toggleLeftSideNav() {
     this.viewController.toggleLeftSidenav();
