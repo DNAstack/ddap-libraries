@@ -19,7 +19,8 @@
     overflow: auto;
   }
 
-  ddaplib-header + ddaplib-main {
+  ddaplib-header + ddaplib-main,
+  ddaplib-searchable-header + ddaplib-main{
     top: 64px;
   }
 
