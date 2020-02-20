@@ -3,7 +3,8 @@ import { ViewControllerService } from '../../view-controller/view-controller.ser
 
 @Component({
   selector: 'app-sidenav-left',
-  templateUrl: './sidenav-left.component.html'
+  templateUrl: './sidenav-left.component.html',
+  styleUrls: ['./sidenav-left.component.scss'],
 })
 export class SidenavLeftComponent {
 
