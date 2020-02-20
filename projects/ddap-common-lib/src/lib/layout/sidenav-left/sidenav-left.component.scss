@@ -1,0 +1,27 @@
+.sidenav-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .secondary-toolbar {
+    mat-icon.icon {
+      font-size: 24px;
+    }
+
+    mat-icon:first-child + * {
+      margin-left: 16px;
+    }
+  }
+
+  .submodule-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .submodule-list-control {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+  }
+}
