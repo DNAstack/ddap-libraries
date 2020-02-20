@@ -1,0 +1,40 @@
+.site-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ddaplib-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+  }
+
+  ddaplib-header + ddaplib-main {
+    top: 64px;
+  }
+
+  .secondary-toolbar {
+    height: 64px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+
+    mat-icon.icon {
+      font-size: 24px;
+    }
+
+    mat-icon:first-child + * {
+      margin-left: 16px;
+    }
+  }
+}
