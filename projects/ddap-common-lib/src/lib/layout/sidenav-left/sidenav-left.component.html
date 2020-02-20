@@ -11,6 +11,7 @@
             mat-menu-item
             tabindex="-1"
             routerLinkActive="active"
+            [attr.data-se]="'nav-' + submodule.key"
             routerLink="/{{viewController.getRealmId()}}/{{submodule.routerLink}}">
       <mat-icon *ngIf="submodule.iconClasses" class="{{ submodule.iconClasses }}"></mat-icon>
       <mat-icon *ngIf="submodule.iconName">{{submodule.iconName}}</mat-icon>

@@ -3,8 +3,12 @@
     <a class="site-name" routerLink="/">{{siteName}}</a>
   </div>
   <div class="menus">
-    <button tabindex="-1" matTooltip="Toggle Product Menu" class="m-r-sm" mat-icon-button
-      [matMenuTriggerFor]="productMenu">
+    <button tabindex="-1"
+            matTooltip="Toggle Product Menu"
+            class="m-r-sm"
+            mat-icon-button
+            data-se="product-app-menu"
+            [matMenuTriggerFor]="productMenu">
       <mat-icon>apps</mat-icon>
     </button>
     <mat-menu tabindex="-1" #productMenu="matMenu" class="app-menu-section">
@@ -13,6 +17,7 @@
         routerLink="/{{viewController.getRealmId()}}/{{app.routerLink}}"
         routerLinkActive="active"
         tabindex="-1"
+        [attr.data-se]="'product-app-menu-' + app.key"
         mat-menu-item>
         <mat-icon class="{{ app.iconClasses }}">{{app.iconName}}</mat-icon>
         <span>{{app.name}}</span>
