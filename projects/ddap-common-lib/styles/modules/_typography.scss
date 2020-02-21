@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
 $primary-font-family: 'Roboto', sans-serif;
 
@@ -8,3 +9,13 @@ $dnastack-icons-eot-font-path: "/assets/fonts/dnastack.eot";
 $dnastack-icons-svg-font-path: "/assets/fonts/dnastack.svg";
 $dnastack-icons-ttf-font-path: "/assets/fonts/dnastack.ttf";
 $dnastack-icons-woff-font-path: "/assets/fonts/dnastack.woff";
+
+code {
+  font-family: "Roboto Mono";
+  background-color: $color-grey-light;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 0 0.25rem;
+  border-radius: 0.25rem;
+  margin: 1px 0;
+}
