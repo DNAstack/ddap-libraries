@@ -7,6 +7,7 @@ import {RealmChangeConfirmationDialogComponent} from "../realm-change-confirmati
 import {ActionType} from "../realm-change-confirmation-dialog/realm-change-confirmation-dialog.model";
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
+import {RealmEditDialogComponent} from "../realm-edit-dialog/realm-edit-dialog.component";
 
 @Component({
   selector: 'ddaplib-realm-input',
@@ -57,6 +58,18 @@ export class RealmInputComponent implements OnInit {
         this.form.setValue({ realm: this.realm });
       }
     });
+  }
+
+  openRealmEditDialog() {
+    const dialogRef = this.dialog.open(RealmEditDialogComponent, {
+      data: {
+        realm: this.realm,
+        updateRealm: this.onAcknowledge
+      },
+      minWidth: "10vw",
+      minHeight: "10vh"
+    });
+    dialogRef.afterClosed().subscribe();
   }
 
   toggleReadonly() {

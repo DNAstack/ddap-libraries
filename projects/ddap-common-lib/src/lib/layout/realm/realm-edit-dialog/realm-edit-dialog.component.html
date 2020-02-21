@@ -1,0 +1,35 @@
+<h2>Update Realm</h2>
+<div mat-dialog-content>
+  <p>Note: Changing realm will log you out of your current session.</p>
+  <form novalidate
+      class="realm-form"
+      [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Realm</mat-label>
+      <input matInput
+             #realmInput
+             required
+             data-se="realm-input"
+             formControlName="realm"
+             placeholder="Realm"
+             autocomplete="off">
+      <mat-error *ngIf="form.get('realm').invalid">Realm name must be 3-46 characters and alphanumeric</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button
+          (click)="cancel()"
+          class="uppercase">
+    Cancel
+  </button>
+  <button mat-button
+          mat-flat-button
+          data-se="update-realm"
+          color="primary"
+          class="uppercase"
+          (click)="save()"
+          type="submit">
+    Update
+  </button>
+</div>
