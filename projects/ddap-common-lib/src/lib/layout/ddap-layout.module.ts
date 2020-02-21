@@ -22,6 +22,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
 import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
+import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
     SearchableHeaderComponent,
     RealmInputComponent,
     RealmChangeConfirmationDialogComponent,
-    SidenavLeftComponent
+    SidenavLeftComponent,
+    RealmEditDialogComponent
     ],
   imports: [
     CommonModule,
@@ -61,11 +63,13 @@ import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
     SandboxBannerComponent,
     SearchableHeaderComponent,
     RealmInputComponent,
-    RealmChangeConfirmationDialogComponent,
-    SidenavLeftComponent
+    RealmChangeConfirmationDialogComponent, // FIXME this component has to be removed once ddap-dam and ddap-ic are updated
+    SidenavLeftComponent,
+    RealmEditDialogComponent
   ],
   entryComponents: [
-    RealmChangeConfirmationDialogComponent
+    RealmChangeConfirmationDialogComponent,
+    RealmEditDialogComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RealmInterceptor, multi: true },
