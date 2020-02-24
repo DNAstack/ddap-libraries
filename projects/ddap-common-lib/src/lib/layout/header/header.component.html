@@ -9,6 +9,6 @@
   <mat-icon *ngIf="icon" class="m-r-sm">{{icon}}</mat-icon>
   <h2 data-se="page-title">{{ label || 'Unknown' }}</h2>
       <span class="fill-space"></span>
+    <ng-content></ng-content>
   </mat-toolbar-row>
-  <ng-content></ng-content>
 </mat-toolbar>
