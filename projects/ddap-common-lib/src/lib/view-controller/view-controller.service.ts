@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {ModuleMetadata} from "../model/module-metadata.model";
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ViewFilterInterface} from "./view-filter.interface";
 
 @Injectable({
@@ -15,8 +15,8 @@ export class ViewControllerService {
   public realm: string; // FIXME
   private filters: ViewFilterInterface[] = [];
 
-  constructor(
-    private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private router: Router) {
     this.realm = this.route.root.firstChild.snapshot.params.realmId;
   }
 
@@ -61,14 +61,15 @@ export class ViewControllerService {
   }
 
   getCurrentApp(): ModuleMetadata {
-    if (!this.route.root
-      || !this.route.root.firstChild
-      || !this.route.root.firstChild.firstChild) {
-      return null;
-    }
-    const secondLevelPath = this.route.root.firstChild.firstChild.snapshot.routeConfig.path;
+    // if (!this.route.root
+    //   || !this.route.root.firstChild
+    //   || !this.route.root.firstChild.firstChild) {
+    //   return null;
+    // }
+    // const secondLevelPath = this.route.root.firstChild.firstChild.snapshot.routeConfig.path;
+    const currentUrl = this.router.url;
     for (let app of this.getAllApps()) {
-      if (app.routerLink === secondLevelPath) {
+      if (currentUrl.indexOf(app.routerLink) !== -1) {
         return app;
       }
     }

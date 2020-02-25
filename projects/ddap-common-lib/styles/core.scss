@@ -51,11 +51,19 @@ body {
 
 /** Links **/
 a {
-
+  color: map-get($app-accent, 600);
   text-decoration: none;
 
   &:hover {
+    color: map-get($app-accent, 600);
     text-decoration: none;
+  }
+}
+
+.active {
+  color: map-get($app-accent, 600);
+  &.mat-menu-item .mat-icon-no-color {
+    color: map-get($app-accent, 600);
   }
 }
 
