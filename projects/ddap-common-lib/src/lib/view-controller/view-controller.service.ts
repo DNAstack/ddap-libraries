@@ -76,7 +76,9 @@ export class ViewControllerService {
     return null;
   }
 
-  getSubModuleList(parentKey: string): ModuleMetadata[] {
-    return Object.values(this.appList).filter(module => module.parentKey === parentKey);
+  getSubModuleList(currentApp: ModuleMetadata): ModuleMetadata[] {
+    return currentApp
+      ? Object.values(this.appList).filter(module => module.parentKey === currentApp.key)
+      : this.appList;
   }
 }
