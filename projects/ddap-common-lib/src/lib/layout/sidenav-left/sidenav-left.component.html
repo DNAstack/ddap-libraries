@@ -7,7 +7,7 @@
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="submodule-list">
-    <button *ngFor="let submodule of viewController.getSubModuleList(viewController.getCurrentApp().key); index as j;"
+    <button *ngFor="let submodule of viewController.getSubModuleList(viewController.getCurrentApp()); index as j;"
             mat-menu-item
             tabindex="-1"
             routerLinkActive="active"
