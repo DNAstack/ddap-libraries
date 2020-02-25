@@ -8,10 +8,14 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import {DdapLayoutModule} from "../ddap-layout.module";
+import { MenuProfileComponent } from './menu-profile/menu-profile.component';
+import { MenuAppsComponent } from './menu-apps/menu-apps.component';
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    MenuProfileComponent,
+    MenuAppsComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +28,9 @@ import {DdapLayoutModule} from "../ddap-layout.module";
     DdapLayoutModule
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    MenuProfileComponent,
+    MenuAppsComponent
   ]
 })
 export class MenuModule { }

@@ -1,0 +1,21 @@
+<button tabindex="-1"
+        matTooltip="Toggle Product Menu"
+        class="m-r-sm"
+        mat-icon-button
+        data-se="product-app-menu"
+        [matMenuTriggerFor]="productMenu">
+  <mat-icon>apps</mat-icon>
+</button>
+<mat-menu tabindex="-1" #productMenu="matMenu" class="app-menu-section">
+  <div class="app-menu-section-title">Apps</div>
+  <button *ngFor="let app of accessibleApps"
+          routerLink="/{{realmId}}/{{app.routerLink}}"
+          routerLinkActive="active"
+          tabindex="-1"
+          [attr.data-se]="'product-app-menu-' + app.key"
+          mat-menu-item>
+    <mat-icon class="{{ app.iconClasses }}">{{app.iconName}}</mat-icon>
+    <span>{{app.name}}</span>
+  </button>
+  <ng-content></ng-content>
+</mat-menu>

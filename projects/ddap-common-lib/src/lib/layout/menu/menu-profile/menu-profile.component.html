@@ -1,0 +1,14 @@
+<button tabindex="-1" matTooltip="Toggle User Menu" class="m-r-sm" mat-icon-button [matMenuTriggerFor]="userMenu">
+  <mat-icon>face</mat-icon>
+</button>
+<mat-menu tabindex="-1" #userMenu="matMenu">
+  <button routerLink="/curious/identities" tabindex="-1" mat-menu-item>
+    <mat-icon>perm_identity</mat-icon>
+    <span>Profile</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button tabindex="-1" mat-menu-item>
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>
