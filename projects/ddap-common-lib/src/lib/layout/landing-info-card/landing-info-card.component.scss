@@ -1,12 +1,13 @@
 
-div {
+.landing-info-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   height: 100%;
-  margin-left: -2rem;
-  margin-right: -2rem;
+  position: absolute;
+  width: 100%;
+  margin: 0;
   background: url("../../../assets/images/background_c.jpg") center center / cover no-repeat;
 
   mat-card {
