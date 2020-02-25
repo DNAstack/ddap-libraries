@@ -1,6 +1,10 @@
-<button tabindex="-1" matTooltip="Toggle User Menu" class="m-r-sm" mat-icon-button [matMenuTriggerFor]="userMenu">
+<button tabindex="-1"
+        matTooltip="Toggle User Menu"
+        class="m-r-sm"
+        mat-icon-button
+        [matMenuTriggerFor]="userMenu">
   <mat-icon>face</mat-icon>
 </button>
-<mat-menu tabindex="-1" #userMenu="matMenu">
+<mat-menu tabindex="-1" #userMenu="matMenu" class="menu-profile">
   <ng-content></ng-content>
 </mat-menu>
