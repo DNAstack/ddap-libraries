@@ -1,9 +1,14 @@
 <div class="sidenav-left">
-  <mat-toolbar class="secondary-toolbar" *ngIf="viewController.getCurrentApp()">
-    <mat-toolbar-row>
-      <mat-icon *ngIf="viewController.getCurrentApp().iconClasses" class="{{ viewController.getCurrentApp().iconClasses }}"></mat-icon>
-      <mat-icon *ngIf="viewController.getCurrentApp().iconName">{{viewController.getCurrentApp().iconName}}</mat-icon>
+  <mat-toolbar class="secondary-toolbar">
+    <mat-toolbar-row *ngIf="viewController.getCurrentApp()">
+      <mat-icon *ngIf="viewController.getCurrentApp().iconClasses"
+                class="{{ viewController.getCurrentApp().iconClasses }}"></mat-icon>
+      <mat-icon *ngIf="viewController.getCurrentApp().iconName">
+        {{viewController.getCurrentApp().iconName}}
+      </mat-icon>
       <span>{{ viewController.getCurrentApp().name }}</span>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="!viewController.getCurrentApp()">
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="submodule-list">
