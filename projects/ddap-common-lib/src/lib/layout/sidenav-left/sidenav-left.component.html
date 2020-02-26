@@ -12,16 +12,23 @@
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="submodule-list">
-    <button *ngFor="let submodule of viewController.getSubModuleList(viewController.getCurrentApp()); index as j;"
-            mat-menu-item
-            tabindex="-1"
-            routerLinkActive="active"
-            [attr.data-se]="'nav-' + submodule.key"
-            routerLink="/{{viewController.getRealmId()}}/{{submodule.routerLink}}">
-      <mat-icon *ngIf="submodule.iconClasses" class="{{ submodule.iconClasses }}"></mat-icon>
-      <mat-icon *ngIf="submodule.iconName">{{submodule.iconName}}</mat-icon>
-      <span>{{submodule.name}}</span>
-    </button>
+    <ng-container *ngFor="let submodule of viewController.getSubModuleList(viewController.getCurrentApp());
+                          index as j;">
+      <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
+    </ng-container>
+    <ng-container *ngFor="let group of viewController.getGroups()">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="!group.collapsibleByDefault" [disabled]="!group.collapsible">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{group.name}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <ng-container *ngFor="let submodule of viewController.getGroupSubmodules(group);
+                          index as j;">
+            <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
+          </ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-container>
     <div class="fill-space"></div>
     <div class="submodule-list-control">
       <button mat-icon-button
@@ -32,6 +39,17 @@
     </div>
   </div>
 </div>
+<ng-template let-submodule="submodule" #module>
+  <button mat-menu-item
+          tabindex="-1"
+          routerLinkActive="active"
+          [attr.data-se]="'nav-' + submodule.key"
+          routerLink="/{{viewController.getRealmId()}}/{{submodule.routerLink}}">
+    <mat-icon *ngIf="submodule.iconClasses" class="{{ submodule.iconClasses }}"></mat-icon>
+    <mat-icon *ngIf="submodule.iconName">{{submodule.iconName}}</mat-icon>
+    <span>{{submodule.name}}</span>
+  </button>
+</ng-template>
 <!-- ↓ FIXME We will need to revisit this. -->
 <!--<div class="b-t font-sm"-->
 <!--     style="position: absolute; bottom:0; height: 64px; width: 100%; z-index: 100; background-color: white; display:flex; flex-direction: row; justify-content: center;">-->

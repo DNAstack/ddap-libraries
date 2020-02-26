@@ -24,6 +24,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
 import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-dialog.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     MatInputModule,
     MatMenuModule,
     MatToolbarModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatExpansionModule
   ],
   exports: [
     HeaderComponent,
