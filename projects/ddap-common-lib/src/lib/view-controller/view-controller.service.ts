@@ -2,6 +2,7 @@ import {Injectable} from "@angular/core";
 import {ModuleMetadata} from "../model/module-metadata.model";
 import {ActivatedRoute, Router} from '@angular/router';
 import {ViewFilterInterface} from "./view-filter.interface";
+import {GroupMetadata} from "./group-metadata.model";
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,7 @@ export class ViewControllerService {
   private appList: ModuleMetadata[] = [];
   public realm: string; // FIXME
   private filters: ViewFilterInterface[] = [];
+  private groups: GroupMetadata[] = [];
 
   constructor(private route: ActivatedRoute,
               private router: Router) {
@@ -60,6 +62,18 @@ export class ViewControllerService {
     return this;
   }
 
+  registerGroup(groupMetadata: GroupMetadata) {
+    this.groups.push(groupMetadata)
+    return this;
+  }
+
+  getGroups(): GroupMetadata[] {
+    return this.groups;
+  }
+
+  getGroupSubmodules(group : GroupMetadata): ModuleMetadata[] {
+    return Object.values(this.appList).filter(module => module.group === group.key)
+  }
   getCurrentApp(): ModuleMetadata {
     // if (!this.route.root
     //   || !this.route.root.firstChild
@@ -79,6 +93,6 @@ export class ViewControllerService {
   getSubModuleList(currentApp: ModuleMetadata): ModuleMetadata[] {
     return currentApp
       ? Object.values(this.appList).filter(module => module.parentKey === currentApp.key)
-      : this.appList;
+      : [];
   }
 }
