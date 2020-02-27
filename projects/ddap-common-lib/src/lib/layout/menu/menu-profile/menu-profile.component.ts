@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'ddaplib-menu-profile',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu-profile.component.scss']
 })
 export class MenuProfileComponent implements OnInit {
+
+  @Input()
+  account?;
 
   constructor() { }
 

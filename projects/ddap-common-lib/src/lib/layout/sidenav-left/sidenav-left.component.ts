@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { ViewControllerService } from '../../view-controller/view-controller.service'
 
 @Component({
@@ -7,6 +7,9 @@ import { ViewControllerService } from '../../view-controller/view-controller.ser
   styleUrls: ['./sidenav-left.component.scss'],
 })
 export class SidenavLeftComponent {
+
+  @Input()
+  appTitle: string;
 
   constructor(
      public viewController : ViewControllerService
