@@ -75,15 +75,14 @@ export class ViewControllerService {
     return Object.values(this.appList).filter(module => module.group === group.key)
   }
   getCurrentApp(): ModuleMetadata {
-    // if (!this.route.root
-    //   || !this.route.root.firstChild
-    //   || !this.route.root.firstChild.firstChild) {
-    //   return null;
-    // }
-    // const secondLevelPath = this.route.root.firstChild.firstChild.snapshot.routeConfig.path;
-    const currentUrl = this.router.url;
+    if (!this.route.root
+      || !this.route.root.firstChild
+      || !this.route.root.firstChild.firstChild) {
+      return null;
+    }
+    const secondLevelPath = this.route.root.firstChild.firstChild.snapshot.routeConfig.path;
     for (let app of this.getAllApps()) {
-      if (currentUrl.indexOf(app.routerLink) !== -1) {
+      if (app.routerLink === secondLevelPath) {
         return app;
       }
     }
