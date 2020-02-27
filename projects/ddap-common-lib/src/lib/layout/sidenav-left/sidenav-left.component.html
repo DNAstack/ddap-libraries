@@ -33,7 +33,7 @@
       </mat-accordion>
     </ng-container>
     <div class="fill-space"></div>
-    <div class="submodule-list-control">
+    <div class="submodule-list-control" *ngIf="sideNavCollapsible">
       <button mat-icon-button
               (click)="viewController.toggleLeftSidenav()">
         <mat-icon *ngIf="viewController.view.leftSidebarOpened">first_page</mat-icon>

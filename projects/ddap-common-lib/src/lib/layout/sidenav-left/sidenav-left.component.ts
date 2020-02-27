@@ -11,6 +11,9 @@ export class SidenavLeftComponent {
   @Input()
   appTitle: string;
 
+  @Input()
+  sideNavCollapsible: boolean = true;
+
   constructor(
      public viewController : ViewControllerService
   ) {
