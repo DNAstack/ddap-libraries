@@ -9,6 +9,7 @@
       <span>{{ viewController.getCurrentApp().name }}</span>
     </mat-toolbar-row>
     <mat-toolbar-row *ngIf="!viewController.getCurrentApp()">
+      <span *ngIf="appTitle">{{appTitle}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="submodule-list">
@@ -18,7 +19,9 @@
     </ng-container>
     <ng-container *ngFor="let group of viewController.getGroups()">
       <mat-accordion>
-        <mat-expansion-panel [expanded]="!group.collapsibleByDefault" [disabled]="!group.collapsible">
+        <mat-expansion-panel [expanded]="!group.collapsibleByDefault"
+                             [attr.data-se]="'nav-group-'+group.key"
+                             [disabled]="!group.collapsible">
           <mat-expansion-panel-header>
             <mat-panel-title>{{group.name}}</mat-panel-title>
           </mat-expansion-panel-header>
