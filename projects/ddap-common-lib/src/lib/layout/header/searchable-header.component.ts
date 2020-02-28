@@ -11,7 +11,9 @@ export class SearchableHeaderComponent {
   @Input()
   label: string;
   @Input()
-  icon: string;
+  iconName?: string;
+  @Input()
+  iconClass?: string;
   @Input()
   searchable: boolean;
   @Input()
