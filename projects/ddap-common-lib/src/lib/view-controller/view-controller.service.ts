@@ -71,9 +71,6 @@ export class ViewControllerService {
     return this.groups;
   }
 
-  getGroupSubmodules(group : GroupMetadata): ModuleMetadata[] {
-    return Object.values(this.appList).filter(module => module.group === group.key)
-  }
   getCurrentApp(): ModuleMetadata {
     if (!this.route.root
       || !this.route.root.firstChild
@@ -89,9 +86,28 @@ export class ViewControllerService {
     return null;
   }
 
-  getSubModuleList(currentApp: ModuleMetadata): ModuleMetadata[] {
+  /**
+   * All submodules of a group
+   * @param group
+   */
+  getGroupSubmodules(group : GroupMetadata): ModuleMetadata[] {
+    return Object.values(this.appList).filter(module => module.group === group.key)
+  }
+
+  /**
+   * All submodules of an app
+   * @param currentApp
+   */
+  getAppSubmodules(currentApp: ModuleMetadata): ModuleMetadata[] {
     return currentApp
       ? Object.values(this.appList).filter(module => module.parentKey === currentApp.key)
       : [];
+  }
+
+  /**
+   * Submodules that neither belong to an app nor to a group
+   */
+  getSubmodules(): ModuleMetadata[] {
+    return Object.values(this.appList).filter(module => !module.group && !module.parentKey && !module.isApp)
   }
 }

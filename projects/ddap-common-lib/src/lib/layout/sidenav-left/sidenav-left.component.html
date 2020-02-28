@@ -13,7 +13,10 @@
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="submodule-list">
-    <ng-container *ngFor="let submodule of viewController.getSubModuleList(viewController.getCurrentApp());
+    <ng-container *ngFor="let submodule of viewController.getSubmodules()">
+      <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
+    </ng-container>
+    <ng-container *ngFor="let submodule of viewController.getAppSubmodules(viewController.getCurrentApp());
                           index as j;">
       <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
     </ng-container>
