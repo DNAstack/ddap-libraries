@@ -1,7 +1,12 @@
 <mat-toolbar color="primary" class="main-header">
   <div class="menus">
+    <span *ngIf="isSandbox"
+      class="sandbox-warning"
+      matTooltip="This is sandbox testing environment">
+      Sandbox environment
+    </span>
     <a class="site-name" routerLink="/">{{siteName}}</a>
-    <ddaplib-realm-input *ngIf="showRealmInput"
+    <ddaplib-realm-input *ngIf="isSandbox"
                          [actions]="realmActions"
                          (onAcknowledge)="onRealmChangeAcknowledge($event)"
     ></ddaplib-realm-input>
