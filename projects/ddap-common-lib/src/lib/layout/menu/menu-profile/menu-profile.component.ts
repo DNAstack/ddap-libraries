@@ -8,7 +8,10 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MenuProfileComponent implements OnInit {
 
   @Input()
-  account?;
+  showSignIn: boolean = false;
+
+  @Input()
+  loginPath?: string;
 
   constructor() { }
 
