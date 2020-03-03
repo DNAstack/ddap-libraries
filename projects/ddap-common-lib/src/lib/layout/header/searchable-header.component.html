@@ -26,7 +26,7 @@
       </button>
       <ng-content></ng-content>
     </ng-container>
-    <span class="fill-space"></span>
+    <span *ngIf="!searchInputVisible" class="fill-space"></span>
     <button *ngIf="!searchInputVisible"
         (click)="displaySearchInput()"
         mat-icon-button
