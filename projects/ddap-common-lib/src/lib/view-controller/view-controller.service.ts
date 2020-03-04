@@ -16,6 +16,7 @@ export class ViewControllerService {
   public realm: string; // FIXME
   private filters: ViewFilterInterface[] = [];
   private groups: GroupMetadata[] = [];
+  public demoMode: boolean = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router) {
@@ -67,6 +68,11 @@ export class ViewControllerService {
     return this;
   }
 
+  setExperimentalFlag(expFlag) {
+    this.demoMode = expFlag
+      ? expFlag === 'demo' : false;
+  }
+
   getGroups(): GroupMetadata[] {
     return this.groups;
   }
@@ -91,7 +97,9 @@ export class ViewControllerService {
    * @param group
    */
   getGroupSubmodules(group : GroupMetadata): ModuleMetadata[] {
-    return Object.values(this.appList).filter(module => module.group === group.key)
+    return Object.values(this.appList).filter(module => module.isExperimental
+                                                        ? (module.group === group.key && this.demoMode)
+                                                        : module.group === group.key)
   }
 
   /**
@@ -100,7 +108,11 @@ export class ViewControllerService {
    */
   getAppSubmodules(currentApp: ModuleMetadata): ModuleMetadata[] {
     return currentApp
-      ? Object.values(this.appList).filter(module => module.parentKey === currentApp.key)
+      ? Object.values(this.appList).filter(module => {
+        return module.isExperimental
+          ? (module.parentKey === currentApp.key) && this.demoMode
+          : module.parentKey === currentApp.key
+      })
       : [];
   }
 
@@ -108,6 +120,8 @@ export class ViewControllerService {
    * Submodules that neither belong to an app nor to a group
    */
   getSubmodules(): ModuleMetadata[] {
-    return Object.values(this.appList).filter(module => !module.group && !module.parentKey && !module.isApp)
+    return Object.values(this.appList).filter(module => module.isExperimental
+                                                        ? !module.group && !module.parentKey && !module.isApp && this.demoMode
+                                                        : !module.group && !module.parentKey && !module.isApp)
   }
 }

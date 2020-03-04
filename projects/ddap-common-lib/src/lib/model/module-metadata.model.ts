@@ -9,4 +9,5 @@ export interface ModuleMetadata {
   externalLink?: string;
   parentKey?: string;
   isApp: boolean;
+  isExperimental?: boolean;
 }
