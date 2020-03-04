@@ -1,0 +1,15 @@
+<mat-form-field [appearance]="appearance"
+                class="form-field-btn-group">
+  <mat-label>Value</mat-label>
+  <input #valueInput="matInput"
+         [formControl]="control"
+         [attr.data-se]="'inp-' + fieldName + '-' + index"
+         matInput>
+  <button mat-button
+          color="primary"
+          data-se="btn-done"
+          [disabled]="control.invalid"
+          (click)="doneButtonClicked.emit()">
+    Done
+  </button>
+</mat-form-field>
