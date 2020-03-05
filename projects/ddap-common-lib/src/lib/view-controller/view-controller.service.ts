@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {ModuleMetadata} from "../model/module-metadata.model";
+import {Injectable} from '@angular/core';
+import {ModuleMetadata} from '../model/module-metadata.model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ViewFilterInterface} from "./view-filter.interface";
-import {GroupMetadata} from "./group-metadata.model";
+import {ViewFilterInterface} from './view-filter.interface';
+import {GroupMetadata} from './group-metadata.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,7 @@ export class ViewControllerService {
   public realm: string; // FIXME
   private filters: ViewFilterInterface[] = [];
   private groups: GroupMetadata[] = [];
-  public demoMode: boolean = false;
+  public demoMode = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router) {
@@ -44,7 +44,7 @@ export class ViewControllerService {
       return this.getAllApps();
     }
     return this.getAllApps().filter(module => {
-      for (let viewFilter of this.filters) {
+      for (const viewFilter of this.filters) {
         if (viewFilter.isVisible(module)) {
           return true;
         }
@@ -64,7 +64,7 @@ export class ViewControllerService {
   }
 
   registerGroup(groupMetadata: GroupMetadata) {
-    this.groups.push(groupMetadata)
+    this.groups.push(groupMetadata);
     return this;
   }
 
@@ -84,7 +84,7 @@ export class ViewControllerService {
       return null;
     }
     const secondLevelPath = this.route.root.firstChild.firstChild.snapshot.routeConfig.path;
-    for (let app of this.getAllApps()) {
+    for (const app of this.getAllApps()) {
       if (app.routerLink === secondLevelPath) {
         return app;
       }
@@ -96,10 +96,10 @@ export class ViewControllerService {
    * All submodules of a group
    * @param group
    */
-  getGroupSubmodules(group : GroupMetadata): ModuleMetadata[] {
+  getGroupSubmodules(group: GroupMetadata): ModuleMetadata[] {
     return Object.values(this.appList).filter(module => module.isExperimental
                                                         ? (module.group === group.key && this.demoMode)
-                                                        : module.group === group.key)
+                                                        : module.group === group.key);
   }
 
   /**
@@ -111,7 +111,7 @@ export class ViewControllerService {
       ? Object.values(this.appList).filter(module => {
         return module.isExperimental
           ? (module.parentKey === currentApp.key) && this.demoMode
-          : module.parentKey === currentApp.key
+          : module.parentKey === currentApp.key;
       })
       : [];
   }
@@ -122,6 +122,6 @@ export class ViewControllerService {
   getSubmodules(): ModuleMetadata[] {
     return Object.values(this.appList).filter(module => module.isExperimental
                                                         ? !module.group && !module.parentKey && !module.isApp && this.demoMode
-                                                        : !module.group && !module.parentKey && !module.isApp)
+                                                        : !module.group && !module.parentKey && !module.isApp);
   }
 }

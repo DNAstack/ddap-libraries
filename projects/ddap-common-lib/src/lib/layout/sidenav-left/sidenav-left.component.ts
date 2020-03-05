@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import { ViewControllerService } from '../../view-controller/view-controller.service'
+import { ViewControllerService } from '../../view-controller/view-controller.service';
 
 @Component({
   selector: 'app-sidenav-left',
@@ -12,11 +12,9 @@ export class SidenavLeftComponent {
   appTitle: string;
 
   @Input()
-  sideNavCollapsible: boolean = true;
+  sideNavCollapsible = true;
 
-  constructor(
-     public viewController : ViewControllerService
-  ) {
+  constructor(public viewController: ViewControllerService) {
   }
 
   toggleLeftSideNav() {

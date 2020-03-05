@@ -16,9 +16,9 @@ export class FormFieldBtnGroupComponent {
   @Input()
   index?: number;
   @Input()
-  appearance: MatFormFieldAppearance = 'outline';
+  appearance?: MatFormFieldAppearance = 'outline';
 
   @Output()
-  readonly doneButtonClicked: EventEmitter<void> = new EventEmitter<void>();
+  readonly doneButtonClicked: EventEmitter<string> = new EventEmitter<string>();
 
 }

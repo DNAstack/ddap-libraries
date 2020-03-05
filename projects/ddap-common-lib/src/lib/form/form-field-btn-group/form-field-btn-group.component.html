@@ -3,13 +3,13 @@
   <mat-label>Value</mat-label>
   <input #valueInput="matInput"
          [formControl]="control"
-         [attr.data-se]="'inp-' + fieldName + '-' + index"
+         [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
          matInput>
   <button mat-button
           color="primary"
           data-se="btn-done"
           [disabled]="control.invalid"
-          (click)="doneButtonClicked.emit()">
+          (click)="doneButtonClicked.emit(valueInput.value)">
     Done
   </button>
 </mat-form-field>
