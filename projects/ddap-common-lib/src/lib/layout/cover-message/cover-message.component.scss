@@ -1,0 +1,19 @@
+.cover-message {
+  height:100%;
+  width:100%;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 16px;
+  color: #4f4f4f;
+
+  mat-icon {
+    font-size: 100px;
+    width:auto;
+    height:auto;
+  }
+}
+
+:host {
+    height: 100%;
+}

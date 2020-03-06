@@ -25,6 +25,7 @@ import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
 import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-dialog.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatExpansionModule} from "@angular/material/expansion";
+import { CoverMessageComponent } from './cover-message/cover-message.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     RealmInputComponent,
     RealmChangeConfirmationDialogComponent,
     SidenavLeftComponent,
-    RealmEditDialogComponent
+    RealmEditDialogComponent,
+    CoverMessageComponent
     ],
   imports: [
     CommonModule,
@@ -69,7 +71,8 @@ import {MatExpansionModule} from "@angular/material/expansion";
     RealmInputComponent,
     RealmChangeConfirmationDialogComponent, // FIXME this component has to be removed once ddap-dam and ddap-ic are updated
     SidenavLeftComponent,
-    RealmEditDialogComponent
+    RealmEditDialogComponent,
+    CoverMessageComponent
   ],
   entryComponents: [
     RealmChangeConfirmationDialogComponent,
