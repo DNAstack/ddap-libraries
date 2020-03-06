@@ -65,6 +65,31 @@ a {
   color: #4f4f4f;
 }
 
+.h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.h3 {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.h4 {
+  font-size: 14px;
+  font-weight: 500;
+  /*text-transform: uppercase;*/
+  margin: 0;
+}
+
+.h5 {
+  font-size: 12px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
 
 /** FIXME: rename classes and reduce the use of generic classes **/
 /** Spacing **/
@@ -142,6 +167,10 @@ a {
 
 
 /** Rows **/
+
+.mat-header-row {
+  background-color:#fafafa;
+}
 
 .mat-row,
 .mat-header-row {

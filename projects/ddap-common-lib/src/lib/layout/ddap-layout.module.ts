@@ -23,6 +23,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
 import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
 import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-dialog.component';
+import { CoverMessageComponent } from './cover-message/cover-message.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-d
     RealmInputComponent,
     RealmChangeConfirmationDialogComponent,
     SidenavLeftComponent,
-    RealmEditDialogComponent
+    RealmEditDialogComponent,
+    CoverMessageComponent
     ],
   imports: [
     CommonModule,
@@ -65,7 +67,8 @@ import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-d
     RealmInputComponent,
     RealmChangeConfirmationDialogComponent, // FIXME this component has to be removed once ddap-dam and ddap-ic are updated
     SidenavLeftComponent,
-    RealmEditDialogComponent
+    RealmEditDialogComponent,
+    CoverMessageComponent
   ],
   entryComponents: [
     RealmChangeConfirmationDialogComponent,
