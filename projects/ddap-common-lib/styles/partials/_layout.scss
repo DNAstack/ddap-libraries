@@ -1,3 +1,5 @@
+$space: 16px;
+
 .secondary-toolbar {
   height: 64px;
   background-color: white !important;  // Prevent .mat-toolbar (default) from overriding this.
@@ -7,6 +9,13 @@
     display: flex;
     margin-right: 1rem;
   }
+}
+
+.tertiary-toolbar {
+  height: 64px;
+  background-color: white !important;  // Prevent .mat-toolbar (default) from overriding this.
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 100;
 }
 
 .site-container {
@@ -28,6 +37,7 @@
     bottom: 0;
     left: 0;
     overflow: auto;
+    padding: $space;
   }
 
   ddaplib-header + ddaplib-main,
