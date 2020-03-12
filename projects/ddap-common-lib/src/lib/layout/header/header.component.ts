@@ -11,9 +11,11 @@ export class HeaderComponent {
   @Input()
   label: string;
   @Input()
-  icon: string;
+  iconName?: string;
   @Input()
   backLink: string;
+  @Input()
+  iconClass?: string;
 
   constructor(private location: Location) {
   }

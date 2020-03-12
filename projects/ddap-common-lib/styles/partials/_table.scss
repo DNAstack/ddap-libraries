@@ -1,0 +1,42 @@
+table.table--base {
+  width: 100%;
+
+  th,
+  td {
+    padding: 0.5rem 1rem;
+  }
+
+  td.table--link {
+    &:hover {
+      color: $link-color;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  td.table--actions {
+    width: 1.5rem;
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+
+  td.table--expandable-detail {
+    padding: 0;
+
+    div {
+      overflow: hidden;
+      display: flex;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+
+  tr.table--expandable-detail-row {
+    height: 0;
+    padding: 0;
+  }
+
+}

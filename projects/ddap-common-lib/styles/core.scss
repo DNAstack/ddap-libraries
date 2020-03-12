@@ -51,11 +51,19 @@ body {
 
 /** Links **/
 a {
-
+  color: map-get($app-accent, 600);
   text-decoration: none;
 
   &:hover {
+    color: map-get($app-accent, 600);
     text-decoration: none;
+  }
+}
+
+.active {
+  color: map-get($app-accent, 600);
+  &.mat-menu-item .mat-icon-no-color {
+    color: map-get($app-accent, 600);
   }
 }
 
@@ -203,18 +211,6 @@ a {
 
 .b-l {
   border-left: 1px solid #e0e0e0
-}
-
-/** Tables **/
-
-.mat-table:not([class*='mat-elevation-z']),
-.mat-card:not([class*='mat-elevation-z']) {
-  box-shadow: none;
-  /*-webkit-box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);
-  -moz-box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);
-  box-shadow: 0px 0px 4px 0px rgba(235,235,235,1);*/
-  /*box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);*/
-  border: 1px solid #e0e0e0;
 }
 
 /** Overrides **/

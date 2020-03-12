@@ -15,7 +15,7 @@ export class MenuComponent {
   realmActions: string[];
 
   @Input()
-  showRealmInput: boolean = false;
+  isSandbox: boolean = false;
 
   @Output()
   realmChangeAcknowledge: EventEmitter<object> = new EventEmitter<object>();

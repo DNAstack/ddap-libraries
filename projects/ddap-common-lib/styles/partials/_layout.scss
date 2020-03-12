@@ -4,6 +4,17 @@ $space: 16px;
   height: 64px;
   background-color: white !important;  // Prevent .mat-toolbar (default) from overriding this.
   border-bottom: 1px solid #e0e0e0;
+
+  .icon {
+    display: flex;
+    margin-right: 1rem;
+  }
+}
+
+.tertiary-toolbar {
+  height: 64px;
+  background-color: white !important;  // Prevent .mat-toolbar (default) from overriding this.
+  border-bottom: 1px solid #e0e0e0;
   z-index: 100;
 }
 
@@ -53,7 +64,8 @@ $space: 16px;
     .mat-menu-item {
       text-align: center;
 
-      .mat-icon {
+      .mat-icon,
+      .icon {
         margin-right: 0;
       }
     }

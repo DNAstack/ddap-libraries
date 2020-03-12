@@ -1,6 +1,6 @@
 // Base
 
-$primary-color: #005f6b;
+$primary-color: #242424;
 $success-color: #2C632C;
 $failure-color: #F44336;
 $warn-color: #FFA800;
@@ -16,28 +16,61 @@ $color-grey-light: #E2E2E2;
 $color-faded-grey: #d8d8d8;
 
 $mat-primary-color: (
-  50 : #e0f7fa,
-  100 : #b3ebf2,
-  200 : #80deea,
-  300 : #4dd1e1,
-  400 : #26c7da,
-  500 : #005f6b,
-  600 : #00b7cf,
-  700 : #00aec9,
-  800 : #00a6c3,
-  900 : #0098b9,
-  A100 : #e2f9ff,
-  A200 : #afefff,
-  A400 : #7ce4ff,
-  A700 : #63dfff,
+  50 : #e5e5e5,
+  100 : #bdbdbd,
+  200 : #929292,
+  300 : #666666,
+  400 : #454545,
+  500 : #242424,
+  600 : #202020,
+  700 : #1b1b1b,
+  800 : #161616,
+  900 : #0d0d0d,
+  A100 : #eb6969,
+  A200 : #e53c3c,
+  A400 : #ee0000,
+  A700 : #d40000,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-accent-color: (
+  50 : #e3eefc,
+  100 : #b9d5f8,
+  200 : #8bb9f3,
+  300 : #5d9dee,
+  400 : #3a88eb,
+  500 : #1773e7,
+  600 : #146be4,
+  700 : #1160e0,
+  800 : #0d56dd,
+  900 : #0743d7,
+  A100 : #ffffff,
+  A200 : #cdd9ff,
+  A400 : #9ab2ff,
+  A700 : #809eff,
   contrast: (
     50 : #000000,
     100 : #000000,
     200 : #000000,
     300 : #000000,
-    400 : #000000,
-    500 : #000000,
-    600 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
     700 : #ffffff,
     800 : #ffffff,
     900 : #ffffff,
@@ -48,6 +81,8 @@ $mat-primary-color: (
   )
 );
 
+// Header
+$header-font-color: #fff;
 // Navigation
 
 $navbar-main-background: #fff;

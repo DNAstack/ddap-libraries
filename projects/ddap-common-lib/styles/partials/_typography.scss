@@ -135,10 +135,26 @@ h4 {
   color: $navbar-font-subtle-color;
 }
 
+.text-color--subtle-darker {
+  color: $color-grey;
+}
+
 .text-size--small {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
 }
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.text-style--bold {
+  font-weight: bold;
+}
+
+.text-style--italic {
+  font-style: italic;
+}
+
+.color--warn {
+  color: $failure-color;
 }

@@ -1,0 +1,8 @@
+@import "./../../../../../styles/modules/colors";
+.login-btn {
+  background: black;
+
+  &:hover {
+    color: $header-font-color;
+  }
+}

@@ -23,6 +23,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatMenuModule} from "@angular/material/menu";
 import { SidenavLeftComponent } from './sidenav-left/sidenav-left.component';
 import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-dialog.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatExpansionModule} from "@angular/material/expansion";
 import { CoverMessageComponent } from './cover-message/cover-message.component';
 
 @NgModule({
@@ -53,7 +55,9 @@ import { CoverMessageComponent } from './cover-message/cover-message.component';
     ReactiveFormsModule,
     MatInputModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSlideToggleModule,
+    MatExpansionModule
   ],
   exports: [
     HeaderComponent,
