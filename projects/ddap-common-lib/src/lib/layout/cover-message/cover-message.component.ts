@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'cover-message',
+    selector: 'ddaplib-cover-message',
     templateUrl: './cover-message.component.html',
     styleUrls: ['./cover-message.component.scss']
 })
