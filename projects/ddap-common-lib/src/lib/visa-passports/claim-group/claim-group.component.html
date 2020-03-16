@@ -25,16 +25,16 @@
   </ng-template>
   <ng-template #ga4ghAccountClaimsSection>
     <ul class="timeline">
-      <ng-container *ngFor="let accountClaim of ga4ghAccountPassport | keyvalue">
-        <li class="event" *ngFor="let claim of accountClaim.value">
+      <ng-container *ngIf="ga4ghAccountPassport">
+        <li class="event" *ngFor="let visa of ga4ghAccountPassport">
           <div class="line"></div>
-          <h4>{{ claim.type }}: <span>{{ claim.value }}</span></h4>
+          <h4>{{ visa.type }}: <span>{{ visa.value }}</span></h4>
           <p class="flex vertical-center">
-            <mat-icon *ngIf="visaPassportService.isExpiring(claim)"
+            <mat-icon *ngIf="visaPassportService.isExpiring(visa)"
                       class="icon icon-warning"
                       matTooltip="Expiring claim">
             </mat-icon>
-            <span>{{ getFormattedExpiresTextFromAccountClaim(claim) }}</span>
+            <span>{{ getFormattedExpiresTextFromAccountClaim(visa) }}</span>
           </p>
         </li>
       </ng-container>
