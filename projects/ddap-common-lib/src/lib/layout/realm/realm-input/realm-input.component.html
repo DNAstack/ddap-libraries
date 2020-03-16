@@ -1,10 +1,8 @@
 <div class="realm-wrapper">
-  <span data-se="realm-name">{{realm}}</span>
-  <mat-icon matSuffix
-            data-se="realm-menu"
-            [matMenuTriggerFor]="actionsMenu">
-    more_vert
-  </mat-icon>
+  <button mat-button tabindex="-1" data-se="realm-menu" [matMenuTriggerFor]="actionsMenu" matTooltip="Edit Realm">
+    <span data-se="realm-name">{{realm}} &#9662;</span>
+    
+  </button>
   <mat-menu #actionsMenu="matMenu">
     <button mat-menu-item
             data-se="edit-realm"

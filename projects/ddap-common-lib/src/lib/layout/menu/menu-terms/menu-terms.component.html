@@ -1,0 +1,11 @@
+<button tabindex="-1"
+        class="m-r-sm"
+        matTooltip="Terms"
+        mat-icon-button
+        data-se="menu-profile-btn"
+        [matMenuTriggerFor]="termsMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu tabindex="-1" #termsMenu="matMenu" class="menu-profile">
+  <ng-content></ng-content>
+</mat-menu>
