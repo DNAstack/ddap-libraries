@@ -6,6 +6,8 @@ $space-sm: 10px;
 
 $sm: 12px;
 
+$border-color: #e0e0e0;
+
 html, body {
   height: 100%;
 }
@@ -173,6 +175,11 @@ a {
   margin-bottom: $space;
 }
 
+/** Dividers **/
+.v-l {
+  border-left: 1px solid $border-color;
+  height: 100%;
+}
 
 /** Rows **/
 
@@ -194,29 +201,29 @@ a {
 /** Borders **/
 
 .b-a {
-  border: 1px solid #e0e0e0
+  border: 1px solid $border-color;
 }
 
 .b-b {
-  border-bottom: 1px solid #e0e0e0
+  border-bottom: 1px solid $border-color
 }
 
 .b-t {
-  border-top: 1px solid #e0e0e0
+  border-top: 1px solid $border-color
 }
 
 .b-r {
-  border-right: 1px solid #e0e0e0
+  border-right: 1px solid $border-color
 }
 
 .b-l {
-  border-left: 1px solid #e0e0e0
+  border-left: 1px solid $border-color
 }
 
 /** Overrides **/
 
 .mat-stepper-vertical {
-  border: 1px solid #e0e0e0
+  border: 1px solid $border-color
 }
 
 .mat-menu-content {
