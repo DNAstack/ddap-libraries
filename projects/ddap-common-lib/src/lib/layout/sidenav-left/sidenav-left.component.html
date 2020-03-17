@@ -39,8 +39,8 @@
     <div class="submodule-list-control" *ngIf="sideNavCollapsible">
       <button mat-icon-button
               (click)="viewController.toggleLeftSidenav()">
-        <mat-icon *ngIf="viewController.view.leftSidebarOpened">first_page</mat-icon>
-        <mat-icon *ngIf="!viewController.view.leftSidebarOpened">last_page</mat-icon>
+        <mat-icon *ngIf="viewController.view.leftSidebarOpened" matTooltip="Hide Menu">first_page</mat-icon>
+        <mat-icon *ngIf="!viewController.view.leftSidebarOpened" matTooltip="Show Menu">last_page</mat-icon>
       </button>
     </div>
   </div>
@@ -56,12 +56,3 @@
     <span>{{submodule.name}}</span>
   </button>
 </ng-template>
-<!-- ↓ FIXME We will need to revisit this. -->
-<!--<div class="b-t font-sm"-->
-<!--     style="position: absolute; bottom:0; height: 64px; width: 100%; z-index: 100; background-color: white; display:flex; flex-direction: row; justify-content: center;">-->
-<!--  <div style="align-self: center;">-->
-<!--    <a href="https://www.dnastack.com" target="_blank" class="m-r-sm">© DNAstack</a>-->
-<!--    <a href="https://dnastack.com/#/legal/privacy" target="_blank" class="m-r-sm">Privacy Policy</a>-->
-<!--    <a href="https://dnastack.com/#/legal/terms" target="_blank" class="m-r-sm">Terms of Use</a>-->
-<!--  </div>-->
-<!--</div>-->

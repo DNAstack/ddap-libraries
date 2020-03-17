@@ -12,7 +12,7 @@ import { SearchableHeaderComponent } from "./header/searchable-header.component"
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RealmInterceptor } from './realm/realm-interceptor.service';
 import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
-import { MatCardModule, MatPaginatorModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatPaginatorModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { RealmInputComponent } from './realm/realm-input/realm-input.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -56,6 +56,7 @@ import { CoverMessageComponent } from './cover-message/cover-message.component';
     MatInputModule,
     MatMenuModule,
     MatToolbarModule,
+    MatTooltipModule,
     MatSlideToggleModule,
     MatExpansionModule
   ],
