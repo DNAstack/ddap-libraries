@@ -36,7 +36,8 @@ export class ViewControllerService {
   }
 
   getAllApps(): ModuleMetadata[] {
-    return this.appList.filter(module => module.isApp);
+    return this.appList.filter(module => module.isExperimental
+      ? (this.demoMode && module.isApp) : module.isApp );
   }
 
   getAccessibleApps(): ModuleMetadata[] {
