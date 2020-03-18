@@ -1,5 +1,6 @@
 <mat-toolbar color="primary" class="main-header">
   <div class="menus">
+    <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
     <span *ngIf="isSandbox"
       class="sandbox-warning"
       matTooltip="This is sandbox testing environment">
