@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { DdapLayoutModule } from "../ddap-layout.module";
 import { MenuProfileComponent } from './menu-profile/menu-profile.component';
 import { MenuAppsComponent } from './menu-apps/menu-apps.component';
-import { MenuTermsComponent } from './menu-terms/menu-terms.component';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { MenuTermsComponent } from './menu-terms/menu-terms.component';
     MenuComponent,
     MenuProfileComponent,
     MenuAppsComponent,
-    MenuTermsComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +34,7 @@ import { MenuTermsComponent } from './menu-terms/menu-terms.component';
     MenuComponent,
     MenuProfileComponent,
     MenuAppsComponent,
-    MenuTermsComponent
+    FooterComponent
   ]
 })
 export class MenuModule { }

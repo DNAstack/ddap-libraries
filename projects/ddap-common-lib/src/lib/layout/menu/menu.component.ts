@@ -17,6 +17,9 @@ export class MenuComponent {
   @Input()
   isSandbox: boolean = false;
 
+  @Input()
+  logoUrl: string;
+
   @Output()
   realmChangeAcknowledge: EventEmitter<object> = new EventEmitter<object>();
 
