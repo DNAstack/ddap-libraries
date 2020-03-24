@@ -10,4 +10,5 @@ export interface ModuleMetadata {
   parentKey?: string;
   isApp: boolean;
   isExperimental?: boolean;
+  isSidebarEnabled?: boolean;
 }
