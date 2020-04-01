@@ -55,8 +55,6 @@ $space: 16px;
     }
 
     .mat-menu-item {
-      text-align: center;
-
       .mat-icon,
       .icon {
         margin-right: 0;
@@ -67,7 +65,7 @@ $space: 16px;
       .secondary-toolbar {
 
         mat-icon {
-          margin-left: 4px;
+          // nothing
         }
 
         mat-icon:first-child + * {

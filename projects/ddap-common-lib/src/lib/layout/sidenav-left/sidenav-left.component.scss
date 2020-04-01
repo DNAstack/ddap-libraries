@@ -3,6 +3,10 @@
   flex-direction: column;
 
   .secondary-toolbar {
+    mat-icon {
+      margin-left: 4px;
+    }
+
     mat-icon.icon {
       font-size: 24px;
     }
@@ -21,6 +25,7 @@
       mat-icon {
         vertical-align: middle;
         font-size: 24px;
+        margin-left: 4px;
       }
 
       span {
