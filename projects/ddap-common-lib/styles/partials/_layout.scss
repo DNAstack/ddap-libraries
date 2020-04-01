@@ -65,7 +65,10 @@ $space: 16px;
 
     .sidenav-left {
       .secondary-toolbar {
-        text-align: center;
+
+        mat-icon {
+          margin-left: 4px;
+        }
 
         mat-icon:first-child + * {
           display: none;
