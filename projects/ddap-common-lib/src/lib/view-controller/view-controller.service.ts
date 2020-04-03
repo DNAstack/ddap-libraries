@@ -125,4 +125,12 @@ export class ViewControllerService {
                                                         ? !module.group && !module.parentKey && !module.isApp && this.demoMode
                                                         : !module.group && !module.parentKey && !module.isApp);
   }
+
+  isMobile(): boolean {
+    return this.isMobileWidth(window.innerWidth);
+  }
+
+  isMobileWidth(width: number): boolean {
+    return width <= 760;
+  }
 }
