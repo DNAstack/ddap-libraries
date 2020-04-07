@@ -11,4 +11,5 @@ export interface ModuleMetadata {
   isApp: boolean;
   isExperimental?: boolean;
   isSidebarEnabled?: boolean;
+  expFlag?: string;
 }

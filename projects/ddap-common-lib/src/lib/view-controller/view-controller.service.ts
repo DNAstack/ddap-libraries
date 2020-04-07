@@ -16,7 +16,7 @@ export class ViewControllerService {
   public realm: string; // FIXME
   private filters: ViewFilterInterface[] = [];
   private groups: GroupMetadata[] = [];
-  public demoMode = false;
+  public expFlag: string = '';
 
   constructor(private route: ActivatedRoute,
               private router: Router) {
@@ -37,7 +37,7 @@ export class ViewControllerService {
 
   getAllApps(): ModuleMetadata[] {
     return this.appList.filter(module => module.isExperimental
-      ? (this.demoMode && module.isApp) : module.isApp );
+      ? (this.isExperimentOn(module.expFlag) && module.isApp) : module.isApp );
   }
 
   getAccessibleApps(): ModuleMetadata[] {
@@ -70,8 +70,11 @@ export class ViewControllerService {
   }
 
   setExperimentalFlag(expFlag) {
-    this.demoMode = expFlag
-      ? expFlag === 'demo' : false;
+    this.expFlag = expFlag || '';
+  }
+
+  isExperimentOn(expFlag: string): boolean {
+    return this.expFlag == expFlag;
   }
 
   getGroups(): GroupMetadata[] {
@@ -99,7 +102,7 @@ export class ViewControllerService {
    */
   getGroupSubmodules(group: GroupMetadata): ModuleMetadata[] {
     return Object.values(this.appList).filter(module => module.isExperimental
-                                                        ? (module.group === group.key && this.demoMode)
+                                                        ? (module.group === group.key && this.isExperimentOn(module.expFlag))
                                                         : module.group === group.key);
   }
 
@@ -111,7 +114,7 @@ export class ViewControllerService {
     return currentApp
       ? Object.values(this.appList).filter(module => {
         return module.isExperimental
-          ? (module.parentKey === currentApp.key) && this.demoMode
+          ? (module.parentKey === currentApp.key) && this.isExperimentOn(module.expFlag)
           : module.parentKey === currentApp.key;
       })
       : [];
@@ -122,7 +125,7 @@ export class ViewControllerService {
    */
   getSubmodules(): ModuleMetadata[] {
     return Object.values(this.appList).filter(module => module.isExperimental
-                                                        ? !module.group && !module.parentKey && !module.isApp && this.demoMode
+                                                        ? !module.group && !module.parentKey && !module.isApp && this.isExperimentOn(module.expFlag)
                                                         : !module.group && !module.parentKey && !module.isApp);
   }
 
