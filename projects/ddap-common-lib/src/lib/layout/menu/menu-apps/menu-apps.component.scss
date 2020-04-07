@@ -1,5 +1,7 @@
-.mat-menu-item mat-icon {
-  font-size: 24px;
-  margin-right: 16px;
-  vertical-align: middle;
+.mat-menu-item {
+  & > mat-icon, .icon {
+    font-size: 24px;
+    margin-right: 16px;
+    vertical-align: middle;
+  }
 }
