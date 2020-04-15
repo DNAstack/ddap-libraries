@@ -12,4 +12,5 @@ export interface ModuleMetadata {
   isExperimental?: boolean;
   isSidebarEnabled?: boolean;
   expFlag?: string;
+  nonAdmin?: boolean;
 }
