@@ -189,23 +189,6 @@ a {
   height: 100%;
 }
 
-/** Rows **/
-
-.mat-header-row {
-  background-color:#fafafa;
-}
-
-.mat-row,
-.mat-header-row {
-  display: flex;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #CCC;
-  align-items: center;
-  min-height: 48px;
-  padding: 0 24px;
-}
-
 /** Borders **/
 
 .b-a {
