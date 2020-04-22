@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'ddaplib-cover-message',
@@ -9,6 +9,13 @@ export class CoverMessageComponent {
 
     @Input() icon: string;
     @Input() message: string;
+    @Input() buttonLabel: string;
+    @Input() buttonIcon: string;
+    @Output() onButtonClick: EventEmitter<any> = new EventEmitter();
+
+    onClick(): void {
+        this.onButtonClick.emit();
+    }
 
     constructor(
     ) {

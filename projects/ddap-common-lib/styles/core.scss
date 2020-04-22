@@ -90,9 +90,10 @@ a {
 }
 
 .h3 {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 500;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .h4 {
@@ -107,6 +108,11 @@ a {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: -0.05em;
+}
+
+/** Backgrounds **/
+.bg-white {
+  background-color: white;
 }
 
 /** FIXME: rename classes and reduce the use of generic classes **/
@@ -183,6 +189,11 @@ a {
   margin-bottom: $space;
 }
 
+.m-v-sm {
+  margin-top: $space-sm;
+  margin-bottom: $space-sm;
+}
+
 /** Dividers **/
 .v-l {
   border-left: 1px solid $border-color;
@@ -226,6 +237,37 @@ a {
 
 .b-l {
   border-left: 1px solid $border-color
+}
+
+/** Alerts **/
+
+.alert {
+  padding: $space-sm;
+  border: 1px solid $border-color;
+}
+
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
 }
 
 /** Overrides **/
