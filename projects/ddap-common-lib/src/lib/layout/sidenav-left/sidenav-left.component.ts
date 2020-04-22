@@ -14,11 +14,22 @@ export class SidenavLeftComponent {
   @Input()
   sideNavCollapsible = true;
 
+  @Input()
+  isAdmin?: boolean;
+
   constructor(public viewController: ViewControllerService) {
   }
 
   toggleLeftSideNav() {
     this.viewController.toggleLeftSidenav();
+  }
+
+  // In IC Admin some modules are visible to non-admin users
+  showNonAdminModules(isNonAdminModule) {
+    if (typeof isNonAdminModule === "boolean") {
+      return this.isAdmin ? true : isNonAdminModule;
+    }
+    return true;
   }
 
 }

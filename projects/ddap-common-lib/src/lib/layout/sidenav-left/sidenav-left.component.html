@@ -24,6 +24,7 @@
       <mat-accordion>
         <mat-expansion-panel [expanded]="!group.collapsibleByDefault"
                              [attr.data-se]="'nav-group-'+group.key"
+                             *ngIf="showNonAdminModules(group.nonAdmin)"
                              [disabled]="!group.collapsible">
           <mat-expansion-panel-header>
             <mat-panel-title>{{group.name}}</mat-panel-title>
@@ -50,6 +51,7 @@
           tabindex="-1"
           routerLinkActive="active"
           [attr.data-se]="'nav-' + submodule.key"
+          *ngIf="showNonAdminModules(submodule.nonAdmin)"
           routerLink="/{{viewController.getRealmId()}}/{{submodule.routerLink}}">
     <mat-icon *ngIf="submodule.iconClasses" class="{{ submodule.iconClasses }}"></mat-icon>
     <mat-icon *ngIf="submodule.iconName">{{submodule.iconName}}</mat-icon>

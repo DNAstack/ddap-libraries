@@ -4,4 +4,5 @@ export interface GroupMetadata {
   collapsible: boolean;
   collapsibleByDefault: boolean;
   order?: number;
+  nonAdmin?: boolean;
 }
