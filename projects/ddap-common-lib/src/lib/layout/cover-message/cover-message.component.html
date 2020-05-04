@@ -1,9 +1,10 @@
 <div class="cover-message">
     <div style="text-align: center; display: flex; flex-direction: column;">
-        <mat-icon>{{icon}}</mat-icon>
-        <div>{{message}}</div>
-        <div style="margin-top: 16px; margin-bottom: 16px;" >
-            <button *ngIf="buttonLabel" (click)="onClick()" mat-flat-button color="accent"><mat-icon style="margin-right:10px" *ngIf="buttonIcon">{{buttonIcon}}</mat-icon>{{buttonLabel}}</button>
+        <mat-progress-spinner style="margin:0 auto;" *ngIf="isProgress" color="accent" mode="indeterminate"></mat-progress-spinner>
+        <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+        <div *ngIf="message">{{message}}</div>
+        <div *ngIf="buttonLabel" style="margin-top: 16px; margin-bottom: 16px;" >
+            <button (click)="onClick()" mat-flat-button color="accent"><mat-icon style="margin-right:10px" *ngIf="buttonIcon">{{buttonIcon}}</mat-icon>{{buttonLabel}}</button>
         </div>
         <ng-content></ng-content>
     </div>

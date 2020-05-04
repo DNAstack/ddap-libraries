@@ -26,6 +26,7 @@ import { RealmEditDialogComponent } from './realm/realm-edit-dialog/realm-edit-d
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { CoverMessageComponent } from './cover-message/cover-message.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CoverMessageComponent } from './cover-message/cover-message.component';
     MatMenuModule,
     MatToolbarModule,
     MatTooltipModule,
+    MatProgressSpinnerModule,
     MatSlideToggleModule,
     MatExpansionModule
   ],

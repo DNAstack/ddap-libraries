@@ -11,6 +11,7 @@ export class CoverMessageComponent {
     @Input() message: string;
     @Input() buttonLabel: string;
     @Input() buttonIcon: string;
+    @Input() isProgress?: boolean;
     @Output() onButtonClick: EventEmitter<any> = new EventEmitter();
 
     onClick(): void {
@@ -19,6 +20,7 @@ export class CoverMessageComponent {
 
     constructor(
     ) {
+        this.isProgress = false;
     }
 
 }
