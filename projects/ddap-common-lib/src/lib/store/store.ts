@@ -1,4 +1,5 @@
 import { BehaviorSubject, Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 export class Store<T> {
 
@@ -7,14 +8,19 @@ export class Store<T> {
 
   protected constructor(initialState: T) {
     this._state$ = new BehaviorSubject(initialState);
-    this.state$ = this._state$.asObservable();
+    this.state$ = this._state$.asObservable()
+      .pipe(
+        filter((state: T) => {
+          return state !== null;
+        })
+      );
   }
 
-  get state (): T {
+  get state(): T {
     return this._state$.getValue();
   }
 
-  public setState (nextState: T) {
+  public setState(nextState: T) {
     this._state$.next(nextState);
   }
 
