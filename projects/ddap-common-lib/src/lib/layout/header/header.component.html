@@ -1,12 +1,14 @@
 <mat-toolbar class="secondary-toolbar">
-  <mat-toolbar-row style="display: flex">
-      <button class="m-r-sm" *ngIf="backLink" data-se="back-link" mat-icon-button>
-        <mat-icon [routerLink]="backLink">keyboard_arrow_left</mat-icon>
-      </button>
-      <mat-icon *ngIf="iconName" class="m-r-sm">{{iconName}}</mat-icon>
-      <mat-icon *ngIf="iconClass" class="m-r-sm" [class]="iconClass"></mat-icon>
-      <h2 data-se="page-title">{{ label || 'Unknown' }}</h2>
+  <mat-toolbar-row class="flex">
+    <button class="m-r-sm" *ngIf="backLink" data-se="back-link" mat-icon-button>
+      <mat-icon [routerLink]="backLink">keyboard_arrow_left</mat-icon>
+    </button>
+    <mat-icon *ngIf="iconName" class="m-r-sm">{{iconName}}</mat-icon>
+    <mat-icon *ngIf="iconClass" class="m-r-sm" [class]="iconClass"></mat-icon>
+    <ng-container *ngIf="label">
+      <h2 data-se="page-title">{{ label }}</h2>
       <span class="fill-space"></span>
+    </ng-container>
     <ng-content></ng-content>
   </mat-toolbar-row>
 </mat-toolbar>
