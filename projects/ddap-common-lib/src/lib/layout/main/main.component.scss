@@ -12,10 +12,11 @@ main {
   transform: translate(-50%, -50%);
   width: 100%;
   .mat-icon {
-    font-size: 3rem;
-    width: 3rem;
-    height: 3rem;
+    font-size: 5rem;
+    width: 5rem;
+    height: 5rem;
     color: $warn-color;
+    margin-bottom: 1rem;
   }
   p {
     padding: 0 1rem;
