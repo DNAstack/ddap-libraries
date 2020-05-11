@@ -1,7 +1,8 @@
 <ng-container *ngIf="(disableMobile && isMobile); else mainScreen">
   <div class="disabled-mobile">
-    <div><mat-icon>laptop</mat-icon></div>
-    Thank you for your interest in this feature, please use desktop/laptop to avail it.
+    <div><mat-icon>warning</mat-icon></div>
+    <p>This application is intended for use on devices with a larger display. Please try accessing this
+      application from a tablet or desktop computer.</p>
   </div>
 </ng-container>
 <ng-template #mainScreen>
