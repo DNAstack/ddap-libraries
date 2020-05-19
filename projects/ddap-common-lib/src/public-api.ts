@@ -21,6 +21,7 @@ export * from './lib/store/store';
 export * from './lib/error-handler/error-handler.service';
 export * from './lib/time-duration.parser';
 export * from './lib/array-utils';
+export * from './lib/text-utils';
 
 export * from './lib/layout/menu/menu.module';
 
