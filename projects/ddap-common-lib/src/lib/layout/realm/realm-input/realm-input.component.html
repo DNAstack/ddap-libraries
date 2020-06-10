@@ -1,19 +1,24 @@
-<div class="realm-wrapper">
-  <button mat-button tabindex="-1" data-se="realm-menu" [matMenuTriggerFor]="actionsMenu" matTooltip="Edit Realm">
-    <span data-se="realm-name">{{realm}}</span>
-    <mat-icon>arrow_drop_down</mat-icon>
+<div *ngIf="form && form.get('realm').value as realm"
+     class="realm-wrapper">
+  <button [matMenuTriggerFor]="actionsMenu"
+          data-se="realm-menu"
+          mat-button
+          matTooltip="Edit Realm"
+          tabindex="-1">
+    <span data-se="realm-name">{{ realm }}</span>
+    <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #actionsMenu="matMenu">
-    <button mat-menu-item
+    <button *ngIf="enabledActions.includes(ActionType.edit)"
+            (click)="openRealmEditDialog()"
             data-se="edit-realm"
-            *ngIf="actions.indexOf('edit') !== -1"
-            (click)="openRealmEditDialog()">
+            mat-menu-item>
       Edit
     </button>
-    <button mat-menu-item
+    <button *ngIf="enabledActions.includes(ActionType.delete) && realm !== 'master'"
+            (click)="openRealmChangeConfirmationDialog(ActionType.delete)"
             data-se="delete-realm"
-            *ngIf="(realm !== 'master' && actions.indexOf('delete') !== -1)"
-            (click)="openRealmChangeConfirmationDialog('delete')">
+            mat-menu-item>
       Delete
     </button>
   </mat-menu>

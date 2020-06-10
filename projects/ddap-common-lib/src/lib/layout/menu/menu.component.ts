@@ -1,29 +1,28 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ViewControllerService} from '../../view-controller/view-controller.service';
-import {ModuleMetadata} from '../../model/module-metadata.model';
+import {ModuleMetadata} from '../../view-controller/module-metadata.model';
+import { RealmActionType } from '../realm/realm-change-confirmation-dialog/realm-change-confirmation-dialog.model';
 
 @Component({
-  selector: 'ddaplib-main-header',
+  selector: 'ddaplib-main-header', // FIXME: selector and file name is different
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+
   @Input()
   siteName: string;
-
   @Input()
-  realmActions: string[];
-
+  realmActions: RealmActionType[];
   @Input()
-  isSandbox: boolean = false;
-
+  isSandbox = false;
   @Input()
   logoUrl: string;
 
   @Output()
-  realmChangeAcknowledge: EventEmitter<object> = new EventEmitter<object>();
+  readonly realmChangeAcknowledge: EventEmitter<object> = new EventEmitter<object>();
 
-  public administrativeApps: ModuleMetadata[];
+  administrativeApps: ModuleMetadata[];
 
   constructor(public viewController: ViewControllerService) {}
 

@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {ModuleMetadata} from '../model/module-metadata.model';
+import {ModuleMetadata} from './module-metadata.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ViewFilterInterface} from './view-filter.interface';
 import {GroupMetadata} from './group-metadata.model';
 
+// TODO: to be refactored
 @Injectable({
   providedIn: 'root',
 })

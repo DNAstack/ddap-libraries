@@ -1,10 +1,17 @@
 <ng-container *ngIf="(disableMobile && isMobile); else mainScreen">
   <div class="disabled-mobile">
-    <div><mat-icon>warning</mat-icon></div>
-    <p>This application is intended for use on devices with a larger display. Please try accessing this
-      application from a tablet or desktop computer.</p>
+    <div>
+      <mat-icon>warning</mat-icon>
+    </div>
+    <p>
+      This application is intended for use on devices with a larger display. Please try accessing this
+      application from a tablet or desktop computer.
+    </p>
   </div>
 </ng-container>
+
 <ng-template #mainScreen>
-  <main><ng-content></ng-content></main>
+  <main>
+    <ng-content></ng-content>
+  </main>
 </ng-template>

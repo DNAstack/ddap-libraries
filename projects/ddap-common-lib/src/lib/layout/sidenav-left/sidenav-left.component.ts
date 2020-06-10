@@ -10,10 +10,8 @@ export class SidenavLeftComponent {
 
   @Input()
   appTitle: string;
-
   @Input()
   sideNavCollapsible = true;
-
   @Input()
   isAdmin?: boolean;
 

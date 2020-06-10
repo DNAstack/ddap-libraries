@@ -1,7 +1,10 @@
 export interface RealmChangeConfirmationDialogModel {
   realm: string;
-  action: ActionType;
+  action: RealmActionType;
   onAcknowledge: any;
 }
 
-export type ActionType = 'edit' | 'delete';
+export enum RealmActionType {
+  edit = 'edit',
+  delete = 'delete',
+}

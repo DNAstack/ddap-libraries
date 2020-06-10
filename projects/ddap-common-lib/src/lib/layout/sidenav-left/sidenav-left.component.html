@@ -12,47 +12,47 @@
       <span *ngIf="appTitle">{{appTitle}}</span>
     </mat-toolbar-row>
   </mat-toolbar>
+
   <div class="submodule-list">
     <ng-container *ngFor="let submodule of viewController.getSubmodules()">
       <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
     </ng-container>
-    <ng-container *ngFor="let submodule of viewController.getAppSubmodules(viewController.getCurrentApp());
-                          index as j;">
+    <ng-container *ngFor="let submodule of viewController.getAppSubmodules(viewController.getCurrentApp())">
       <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
     </ng-container>
     <ng-container *ngFor="let group of viewController.getGroups()">
       <mat-accordion>
-        <mat-expansion-panel [expanded]="!group.collapsibleByDefault"
+        <mat-expansion-panel *ngIf="showNonAdminModules(group.nonAdmin)"
                              [attr.data-se]="'nav-group-'+group.key"
-                             *ngIf="showNonAdminModules(group.nonAdmin)"
-                             [disabled]="!group.collapsible">
+                             [disabled]="!group.collapsible"
+                             [expanded]="!group.collapsibleByDefault">
           <mat-expansion-panel-header>
             <mat-panel-title>{{group.name}}</mat-panel-title>
           </mat-expansion-panel-header>
-          <ng-container *ngFor="let submodule of viewController.getGroupSubmodules(group);
-                          index as j;">
+          <ng-container *ngFor="let submodule of viewController.getGroupSubmodules(group)">
             <ng-container *ngTemplateOutlet="module; context: {submodule: submodule}"></ng-container>
           </ng-container>
         </mat-expansion-panel>
       </mat-accordion>
     </ng-container>
     <div class="fill-space"></div>
-    <div class="submodule-list-control" *ngIf="sideNavCollapsible">
-      <button mat-icon-button
-              (click)="viewController.toggleLeftSidenav()">
+    <div *ngIf="sideNavCollapsible" class="submodule-list-control">
+      <button (click)="viewController.toggleLeftSidenav()"
+              mat-icon-button>
         <mat-icon *ngIf="viewController.view.leftSidebarOpened" matTooltip="Hide Menu">first_page</mat-icon>
         <mat-icon *ngIf="!viewController.view.leftSidebarOpened" matTooltip="Show Menu">last_page</mat-icon>
       </button>
     </div>
   </div>
 </div>
-<ng-template let-submodule="submodule" #module>
-  <button mat-menu-item
-          tabindex="-1"
-          routerLinkActive="active"
+
+<ng-template #module let-submodule="submodule">
+  <button *ngIf="showNonAdminModules(submodule.nonAdmin)"
           [attr.data-se]="'nav-' + submodule.key"
-          *ngIf="showNonAdminModules(submodule.nonAdmin)"
-          routerLink="/{{viewController.getRealmId()}}/{{submodule.routerLink}}">
+          mat-menu-item
+          routerLink="/{{viewController.getRealmId()}}/{{submodule.routerLink}}"
+          routerLinkActive="active"
+          tabindex="-1">
     <mat-icon *ngIf="submodule.iconClasses" class="{{ submodule.iconClasses }}"></mat-icon>
     <mat-icon *ngIf="submodule.iconName">{{submodule.iconName}}</mat-icon>
     <span>{{submodule.name}}</span>

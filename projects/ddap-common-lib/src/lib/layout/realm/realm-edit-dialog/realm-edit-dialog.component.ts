@@ -1,14 +1,15 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {nameConstraintPattern} from "../../../admin/entity.model";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {nameConstraintPattern} from '../../../admin/entity.model';
+import { RealmActionType } from '../realm-change-confirmation-dialog/realm-change-confirmation-dialog.model';
 
 @Component({
   selector: 'ddaplib-realm-edit-dialog',
   templateUrl: './realm-edit-dialog.component.html',
   styleUrls: ['./realm-edit-dialog.component.scss']
 })
-export class RealmEditDialogComponent implements OnInit{
+export class RealmEditDialogComponent implements OnInit {
 
   form: FormGroup;
 
@@ -21,7 +22,7 @@ export class RealmEditDialogComponent implements OnInit{
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       realm: [this.data.realm, [Validators.pattern(nameConstraintPattern)]]
-    })
+    });
   }
 
   cancel(): void {
@@ -29,10 +30,9 @@ export class RealmEditDialogComponent implements OnInit{
   }
 
   save(): void {
-    console.log("realm edit dialog save");
-    if(this.form.valid) {
+    if (this.form.valid) {
       this.dialogRef.close();
-      this.data.updateRealm.emit({action: 'edit', realm: this.form.get('realm').value});
+      this.data.updateRealm.emit({ action: RealmActionType.edit, realm: this.form.get('realm').value} );
     }
   }
 

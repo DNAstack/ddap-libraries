@@ -1,3 +1,7 @@
+<!-- TODO: to be refactored:
+            - inlined styles
+            - meaningful css style names
+-->
 <mat-toolbar color="primary" class="main-header">
   <div class="menus">
     <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
@@ -8,8 +12,8 @@
     </span>
     <a class="site-name" routerLink="/">{{siteName}}</a>
     <ddaplib-realm-input *ngIf="isSandbox"
-                         [actions]="realmActions"
-                         (onAcknowledge)="onRealmChangeAcknowledge($event)"
+                         [enabledActions]="realmActions"
+                         (actionAcknowledged)="onRealmChangeAcknowledge($event)"
     ></ddaplib-realm-input>
   </div>
   <div class="menus">
