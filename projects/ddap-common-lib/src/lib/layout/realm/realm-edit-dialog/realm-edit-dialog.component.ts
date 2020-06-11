@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {nameConstraintPattern} from '../../../admin/entity.model';
-import { RealmActionType } from '../realm-change-confirmation-dialog/realm-change-confirmation-dialog.model';
+import { RealmActionType } from '../realm-action-confirmation-dialog/realm-action-confirmation-dialog.model';
 
 @Component({
   selector: 'ddaplib-realm-edit-dialog',

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ViewControllerService} from '../../view-controller/view-controller.service';
 import {ModuleMetadata} from '../../view-controller/module-metadata.model';
-import { RealmActionType } from '../realm/realm-change-confirmation-dialog/realm-change-confirmation-dialog.model';
+import { RealmActionType } from '../realm/realm-action-confirmation-dialog/realm-action-confirmation-dialog.model';
 
 @Component({
   selector: 'ddaplib-main-header', // FIXME: selector and file name is different
@@ -20,7 +20,7 @@ export class MenuComponent {
   logoUrl: string;
 
   @Output()
-  readonly realmChangeAcknowledge: EventEmitter<object> = new EventEmitter<object>();
+  readonly realmActionConfirmed: EventEmitter<object> = new EventEmitter<object>();
 
   administrativeApps: ModuleMetadata[];
 
@@ -30,7 +30,7 @@ export class MenuComponent {
     this.viewController.toggleLeftSidenav();
   }
 
-  onRealmChangeAcknowledge($event) {
-    this.realmChangeAcknowledge.emit($event);
+  realmActionAcknowledged($event) {
+    this.realmActionConfirmed.emit($event);
   }
 }

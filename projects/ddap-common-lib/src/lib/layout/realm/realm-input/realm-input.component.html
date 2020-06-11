@@ -16,7 +16,7 @@
       Edit
     </button>
     <button *ngIf="enabledActions.includes(ActionType.delete) && realm !== 'master'"
-            (click)="openRealmChangeConfirmationDialog(ActionType.delete)"
+            (click)="openRealmActionConfirmationDialog(ActionType.delete)"
             data-se="delete-realm"
             mat-menu-item>
       Delete

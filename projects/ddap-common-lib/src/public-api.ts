@@ -10,7 +10,7 @@ export * from './lib/layout/sandbox-banner/sandbox-banner-state.service';
 export * from './lib/layout/realm/realm.constant';
 export * from './lib/layout/realm/realm-state.service';
 export * from './lib/layout/realm/realm.guard';
-export * from './lib/layout/realm/realm-change-confirmation-dialog/realm-change-confirmation-dialog.model';
+export * from './lib/layout/realm/realm-action-confirmation-dialog/realm-action-confirmation-dialog.model';
 export * from './lib/form/ddap-form.module';
 export * from './lib/form/form';
 export * from './lib/form/form-validation.service';

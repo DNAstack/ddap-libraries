@@ -1,4 +1,4 @@
-export interface RealmChangeConfirmationDialogModel {
+export interface RealmActionConfirmationDialogModel {
   realm: string;
   action: RealmActionType;
   onAcknowledge: any;

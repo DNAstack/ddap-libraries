@@ -1,8 +1,8 @@
 <h2 mat-dialog-title>Are you sure?</h2>
-<mat-dialog-content *ngIf="data.action === 'edit'">
+<mat-dialog-content *ngIf="data.action === ActionType.edit">
   Changing realm to <b>{{ data.realm }}</b> will log you out of your current session.
 </mat-dialog-content>
-<mat-dialog-content *ngIf="data.action === 'delete'">
+<mat-dialog-content *ngIf="data.action === ActionType.delete">
   Deleting realm will delete all the config changes in the realm.
 </mat-dialog-content>
 <mat-dialog-actions align="end">
@@ -17,6 +17,6 @@
           color="warn"
           class="uppercase"
           data-se="accept-btn">
-    {{data.action === 'edit' ? 'Change' : 'Delete' }} Realm
+    {{ data.action === ActionType.edit ? 'Change' : 'Delete' }} Realm
   </button>
 </mat-dialog-actions>

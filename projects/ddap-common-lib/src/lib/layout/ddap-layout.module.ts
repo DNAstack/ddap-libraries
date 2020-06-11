@@ -25,7 +25,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { CoverMessageComponent } from './cover-message/cover-message.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { RealmChangeConfirmationDialogComponent } from './realm/realm-change-confirmation-dialog/realm-change-confirmation-dialog.component';
+import { RealmActionConfirmationDialogComponent } from './realm/realm-action-confirmation-dialog/realm-action-confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { RealmChangeConfirmationDialogComponent } from './realm/realm-change-con
     SandboxBannerComponent,
     SearchableHeaderComponent,
     RealmInputComponent,
-    RealmChangeConfirmationDialogComponent,
+    RealmActionConfirmationDialogComponent,
     SidenavLeftComponent,
     RealmEditDialogComponent,
     CoverMessageComponent
@@ -73,7 +73,7 @@ import { RealmChangeConfirmationDialogComponent } from './realm/realm-change-con
     CoverMessageComponent
   ],
   entryComponents: [
-    RealmChangeConfirmationDialogComponent,
+    RealmActionConfirmationDialogComponent,
     RealmEditDialogComponent
   ],
   providers: [

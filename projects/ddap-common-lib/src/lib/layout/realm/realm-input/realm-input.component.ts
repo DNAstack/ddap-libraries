@@ -4,8 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { nameConstraintPattern } from '../../../admin/entity.model';
 import { RealmEditDialogComponent } from '../realm-edit-dialog/realm-edit-dialog.component';
-import { RealmChangeConfirmationDialogComponent } from '../realm-change-confirmation-dialog/realm-change-confirmation-dialog.component';
-import { RealmActionType } from '../realm-change-confirmation-dialog/realm-change-confirmation-dialog.model';
+import { RealmActionConfirmationDialogComponent } from '../realm-action-confirmation-dialog/realm-action-confirmation-dialog.component';
+import { RealmActionType } from '../realm-action-confirmation-dialog/realm-action-confirmation-dialog.model';
 
 @Component({
   selector: 'ddaplib-realm-input',
@@ -37,13 +37,13 @@ export class RealmInputComponent implements OnInit {
     });
   }
 
-  openRealmChangeConfirmationDialog(action: RealmActionType): void {
+  openRealmActionConfirmationDialog(action: RealmActionType): void {
     if (this.form.invalid) {
       return;
     }
 
     const realm = this.form.get('realm').value;
-    const dialogRef = this.dialog.open(RealmChangeConfirmationDialogComponent, {
+    const dialogRef = this.dialog.open(RealmActionConfirmationDialogComponent, {
       data: {
         realm,
         action,
@@ -59,7 +59,7 @@ export class RealmInputComponent implements OnInit {
 
   openRealmEditDialog() {
     const realm = this.form.get('realm').value;
-    const dialogRef = this.dialog.open(RealmEditDialogComponent, {
+    this.dialog.open(RealmEditDialogComponent, {
       data: {
         realm,
         updateRealm: this.actionAcknowledged,
@@ -67,7 +67,6 @@ export class RealmInputComponent implements OnInit {
       minWidth: '10vw',
       minHeight: '10vh',
     });
-    dialogRef.afterClosed().subscribe();
   }
 
 }
