@@ -1,3 +1,17 @@
+.table-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+}
+
 table.table--base {
   width: 100%;
 
@@ -15,7 +29,9 @@ table.table--base {
   }
 
   td.table--actions {
-    width: 1.5rem;
+    width: 1rem;
+    text-align: center;
+    padding: 0;
     mat-icon {
       cursor: pointer;
     }
@@ -37,6 +53,10 @@ table.table--base {
   tr.table--expandable-detail-row {
     height: 0;
     padding: 0;
+  }
+
+  tr td:first-child {
+    font-size: 0.8rem;
   }
 
 }
