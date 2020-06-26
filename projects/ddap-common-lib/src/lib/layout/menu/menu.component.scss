@@ -22,3 +22,16 @@ mat-toolbar.main-header {
   top: -5px;
   color: $warn-color;
 }
+
+// [Tablet Stage 2]
+@media only screen and (max-width: 599px) {
+  mat-toolbar.main-header {
+    justify-content: left;
+
+    .menus {
+      img {
+        display: none;
+      }
+    }
+  }
+}
