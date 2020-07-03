@@ -4,13 +4,26 @@
 -->
 <mat-toolbar color="primary" class="main-header">
   <div class="menus">
-    <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
-    <span *ngIf="isSandbox"
-      class="sandbox-warning"
-      matTooltip="This is sandbox testing environment">
-      Sandbox environment
-    </span>
-    <a class="site-name" routerLink="/">{{siteName}}</a>
+    <ng-container *ngIf="logoLink; else noLogoLink">
+      <a href="{{logoLink}}">
+        <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
+      </a>
+      <span *ngIf="isSandbox"
+        class="sandbox-warning"
+        matTooltip="This is sandbox testing environment">
+        Sandbox environment
+      </span>
+      <a class="site-name" href="{{logoLink}}">{{siteName}}</a>
+    </ng-container>
+    <ng-template #noLogoLink>
+      <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
+      <span *ngIf="isSandbox"
+        class="sandbox-warning"
+        matTooltip="This is sandbox testing environment">
+        Sandbox environment
+      </span>
+      <a class="site-name" routerLink="/">{{siteName}}</a>
+    </ng-template>
     <ddaplib-realm-input *ngIf="isSandbox"
                          [enabledActions]="realmActions"
                          (actionAcknowledged)="realmActionAcknowledged($event)"

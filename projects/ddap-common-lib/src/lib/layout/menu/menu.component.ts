@@ -18,6 +18,9 @@ export class MenuComponent {
   isSandbox = false;
   @Input()
   logoUrl: string;
+  @Input()
+  logoLink?: string;
+
 
   @Output()
   readonly realmActionConfirmed: EventEmitter<object> = new EventEmitter<object>();
