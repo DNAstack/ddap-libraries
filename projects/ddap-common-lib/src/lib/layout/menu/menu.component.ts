@@ -19,7 +19,7 @@ export class MenuComponent {
   @Input()
   logoUrl: string;
   @Input()
-  logoLink?: string;
+  headerLink?: string;
 
 
   @Output()

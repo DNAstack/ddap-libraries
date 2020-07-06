@@ -4,13 +4,13 @@
 -->
 <mat-toolbar color="primary" class="main-header">
   <div class="menus">
-    <a *ngIf="logoLink; else noLogoLink"
-      href="{{logoLink}}"
+    <a *ngIf="headerLink; else noheaderLink"
+      href="{{headerLink}}"
       class="site-name" >
       <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
       {{siteName}}
     </a>
-    <ng-template #noLogoLink>
+    <ng-template #noheaderLink>
       <img *ngIf="logoUrl" class="m-r" style="height: 32px; width: auto;" src="{{logoUrl}}"/>
       <a class="site-name" routerLink="/">{{siteName}}</a>
     </ng-template>
