@@ -1,0 +1,11 @@
+<div *ngIf="photoUri"
+     class="img-preview">
+  <div class="flex flex--row vertical-center">
+    <p>Preview</p>
+    <mat-slide-toggle [formControl]="hidePreview">
+      {{ hidePreview.value ? 'ON' : 'OFF' }}
+    </mat-slide-toggle>
+  </div>
+  <img *ngIf="hidePreview.value"
+       [src]="photoUri" />
+</div>

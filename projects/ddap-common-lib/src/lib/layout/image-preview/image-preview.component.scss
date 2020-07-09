@@ -1,0 +1,22 @@
+@import "./../../../../styles/modules/colors";
+
+.img-preview {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  max-height: 30rem;
+  overflow: hidden;
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  p {
+    margin-right: 0.5rem;
+  }
+
+  mat-slide-toggle {
+    color: $color-grey;
+  }
+}

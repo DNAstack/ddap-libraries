@@ -26,6 +26,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { CoverMessageComponent } from './cover-message/cover-message.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RealmActionConfirmationDialogComponent } from './realm/realm-action-confirmation-dialog/realm-action-confirmation-dialog.component';
+import { ImagePreviewComponent } from './image-preview/image-preview.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,9 @@ import { RealmActionConfirmationDialogComponent } from './realm/realm-action-con
     RealmActionConfirmationDialogComponent,
     SidenavLeftComponent,
     RealmEditDialogComponent,
-    CoverMessageComponent
-    ],
+    CoverMessageComponent,
+    ImagePreviewComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -70,7 +72,8 @@ import { RealmActionConfirmationDialogComponent } from './realm/realm-action-con
     SearchableHeaderComponent,
     RealmInputComponent,
     SidenavLeftComponent,
-    CoverMessageComponent
+    CoverMessageComponent,
+    ImagePreviewComponent,
   ],
   entryComponents: [
     RealmActionConfirmationDialogComponent,
