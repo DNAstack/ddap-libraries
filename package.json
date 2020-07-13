@@ -9,8 +9,7 @@
     "lint:fix": "ng lint --fix",
     "version": "cd ./projects/ddap-common-lib && npm version $(git describe)",
     "copyStyles": "cp -r ./projects/ddap-common-lib/styles ./dist/ddap-common-lib/",
-    "copyAssets": "cp -r ./projects/ddap-common-lib/assets ./dist/ddap-common-lib/",
-    "prepublish": "npm run build && npm run copyStyles && npm run copyAssets"
+    "copyAssets": "cp -r ./projects/ddap-common-lib/assets ./dist/ddap-common-lib/"
   },
   "private": true,
   "dependencies": {
