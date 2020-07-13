@@ -78,10 +78,6 @@ import { ImagePreviewComponent } from './image-preview/image-preview.component';
     CoverMessageComponent,
     ImagePreviewComponent,
   ],
-  entryComponents: [
-    RealmActionConfirmationDialogComponent,
-    RealmEditDialogComponent
-  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RealmInterceptor, multi: true },
   ],
