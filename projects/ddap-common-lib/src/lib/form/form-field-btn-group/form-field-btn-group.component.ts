@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { MatFormFieldAppearance } from '@angular/material';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 
 @Component({
   selector: 'ddaplib-form-field-btn-group',

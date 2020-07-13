@@ -1,5 +1,5 @@
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { MatExpansionPanel } from '@angular/material';
+import { MatExpansionPanel } from '@angular/material/expansion';
 
 export interface Form {
   getAllForms(): FormGroup[];

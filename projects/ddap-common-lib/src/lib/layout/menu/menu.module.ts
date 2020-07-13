@@ -11,7 +11,7 @@ import { DdapLayoutModule } from '../ddap-layout.module';
 import { MenuProfileComponent } from './menu-profile/menu-profile.component';
 import { MenuAppsComponent } from './menu-apps/menu-apps.component';
 import { FooterComponent } from '../footer/footer.component';
-import { MatTooltipModule } from '@angular/material';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({

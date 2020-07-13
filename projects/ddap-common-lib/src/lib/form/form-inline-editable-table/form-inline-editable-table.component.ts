@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
-import { MatFormFieldAppearance, MatTable } from '@angular/material';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'ddaplib-form-inline-editable-table',

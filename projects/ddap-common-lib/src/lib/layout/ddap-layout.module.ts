@@ -12,7 +12,10 @@ import { SearchableHeaderComponent } from './header/searchable-header.component'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RealmInterceptor } from './realm/realm-interceptor.service';
 import { LandingInfoCardComponent } from './landing-info-card/landing-info-card.component';
-import { MatCardModule, MatPaginatorModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RealmInputComponent } from './realm/realm-input/realm-input.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
