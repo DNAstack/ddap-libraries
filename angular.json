@@ -15,7 +15,12 @@
             "tsConfig": "projects/ddap-common-lib/tsconfig.lib.json",
             "project": "projects/ddap-common-lib/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/ddap-common-lib/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
