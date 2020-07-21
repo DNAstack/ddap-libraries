@@ -30,6 +30,7 @@ import { CoverMessageComponent } from './cover-message/cover-message.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { RealmActionConfirmationDialogComponent } from './realm/realm-action-confirmation-dialog/realm-action-confirmation-dialog.component';
 import { ImagePreviewComponent } from './image-preview/image-preview.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ImagePreviewComponent } from './image-preview/image-preview.component';
     RealmEditDialogComponent,
     CoverMessageComponent,
     ImagePreviewComponent,
+    PaginatorComponent,
   ],
   imports: [
     CommonModule,
@@ -77,6 +79,7 @@ import { ImagePreviewComponent } from './image-preview/image-preview.component';
     SidenavLeftComponent,
     CoverMessageComponent,
     ImagePreviewComponent,
+    PaginatorComponent,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: RealmInterceptor, multi: true },

@@ -30,6 +30,8 @@ export * from './lib/layout/sidenav-left/sidenav-left.component';
 export * from './lib/layout/cover-message/cover-message.component';
 export * from './lib/layout/image-preview/image-preview.component';
 export * from './lib/layout/footer/footer.component';
+export * from './lib/layout/paginator/paginator.component';
+export * from './lib/layout/paginator/pagination-type.enum';
 
 export * from './lib/form/ddap-form.module';
 export * from './lib/form/form';
