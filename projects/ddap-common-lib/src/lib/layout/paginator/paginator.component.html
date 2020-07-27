@@ -1,8 +1,32 @@
-<mat-paginator color="primary"
-               [hidePageSize]="hidePageSize"
-               [showFirstLastButtons]="showFirstLastButtons"
-               [length]="length"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="pageSizeOptions"
-               (page)="changePage($event)">
-</mat-paginator>
+<ng-container *ngIf="paginationType === PaginationType.bidirectional">
+  <mat-paginator color="primary"
+                 [hidePageSize]="hidePageSize"
+                 [showFirstLastButtons]="showFirstLastButtons"
+                 [length]="length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 (page)="changePage($event)">
+  </mat-paginator>
+</ng-container>
+<ng-container *ngIf="paginationType === PaginationType.unidirectional">
+  <div class="unidirectional-paginator">
+    <div class="stretch"></div>
+    <div class="page-size-container">
+      <span>Items per page:</span>
+      <mat-form-field *ngIf="!hidePageSize">
+        <mat-select (selectionChange)="changePage({ pageSize: pageSizeControl.value })"
+                    [formControl]="pageSizeControl">
+          <mat-option *ngFor="let pageSizeOption of pageSizeOptions"
+                      [value]="pageSizeOption">
+            {{ pageSizeOption }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button (click)="changePage({ nextPage: true })"
+            mat-button
+            color="primary">
+      Next Page
+    </button>
+  </div>
+</ng-container>
