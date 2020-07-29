@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { AbstractControl, FormArray, FormGroup } from '@angular/forms';
-import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 
 @Component({
@@ -9,6 +8,8 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./form-inline-editable-table.component.scss'],
 })
 export class FormInlineEditableTableComponent implements OnInit {
+
+  constructor(private formBuilder: FormBuilder) {}
 
   get datasource(): FormArray {
     return this.form.get(this.arrayFieldName) as FormArray;
@@ -21,18 +22,16 @@ export class FormInlineEditableTableComponent implements OnInit {
   form: FormGroup;
   @Input()
   arrayFieldName: string;
+  @Input()
+  fieldTitle: string;
 
   displayedColumns: string[] = ['value', 'moreActions'];
   currentlyEditing: number;
 
   ngOnInit(): void {
+    this.datasource.insert(0, this.formBuilder.control(''));
     this.datasource.valueChanges
-      .subscribe((values: string[]) => {
-        if (!values[0]) {
-          this.currentlyEditing = 0;
-        }
-        this.dataTable.renderRows();
-      });
+      .subscribe(() => this.dataTable.renderRows());
   }
 
   removeRow(index: number): void {
@@ -40,4 +39,12 @@ export class FormInlineEditableTableComponent implements OnInit {
     this.currentlyEditing = null;
   }
 
+  addEmptyRow() {
+    const firstControl = this.datasource.controls[0];
+    if (!firstControl || firstControl.value) {
+      this.datasource.insert(0, this.formBuilder.control(''));
+    }
+    this.dataTable.renderRows();
+    this.currentlyEditing = 0;
+  }
 }

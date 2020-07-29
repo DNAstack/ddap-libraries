@@ -14,6 +14,8 @@ export class FormFieldBtnGroupComponent {
   @Input()
   fieldName: string;
   @Input()
+  fieldTitle: string;
+  @Input()
   index?: number;
   @Input()
   appearance?: MatFormFieldAppearance = 'outline';
@@ -21,4 +23,7 @@ export class FormFieldBtnGroupComponent {
   @Output()
   readonly doneButtonClicked: EventEmitter<string> = new EventEmitter<string>();
 
+  done(inputValue: string) {
+    this.doneButtonClicked.emit(inputValue)
+  }
 }

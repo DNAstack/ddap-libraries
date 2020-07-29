@@ -5,15 +5,25 @@
          [formArrayName]="arrayFieldName">
     <!-- Value Definition -->
     <ng-container matColumnDef="value">
-      <th mat-header-cell *matHeaderCellDef>Value</th>
+      <th mat-header-cell *matHeaderCellDef>{{fieldTitle}}s</th>
       <td mat-cell *matCellDef="let control; let i = index">
-        <ng-container *ngIf="currentlyEditing === i; else readonlyMode">
+        <ng-container *ngIf="i === 0; else otherIndices">
           <ddaplib-form-field-btn-group [control]="control"
+                                        [fieldTitle]="fieldTitle"
                                         [fieldName]="arrayFieldName"
                                         [index]="i"
-                                        (doneButtonClicked)="currentlyEditing = null">
+                                        (doneButtonClicked)="addEmptyRow()">
           </ddaplib-form-field-btn-group>
         </ng-container>
+        <ng-template #otherIndices>
+          <ng-container *ngIf="currentlyEditing === i; else readonlyMode">
+            <ddaplib-form-field-btn-group [control]="control"
+                                          [fieldName]="arrayFieldName"
+                                          [index]="i"
+                                          (doneButtonClicked)="addEmptyRow()">
+            </ddaplib-form-field-btn-group>
+          </ng-container>
+        </ng-template>
         <ng-template #readonlyMode>
           <a [href]="control.value"
              target="_blank"

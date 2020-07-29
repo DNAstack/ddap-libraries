@@ -1,15 +1,16 @@
 <mat-form-field [appearance]="appearance"
                 class="form-field-btn-group">
-  <mat-label>Value</mat-label>
+  <mat-label>New {{ fieldTitle }}</mat-label>
   <input #valueInput="matInput"
          [formControl]="control"
          [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
+         (keyup.enter)="done($event.target.value)"
          matInput>
   <button mat-button
           color="primary"
           data-se="btn-done"
           [disabled]="control.invalid"
-          (click)="doneButtonClicked.emit(valueInput.value)">
+          (click)="done(valueInput.value)">
     Done
   </button>
 </mat-form-field>
