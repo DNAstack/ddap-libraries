@@ -9,6 +9,8 @@ export * from './lib/admin/config-modification.model';
 export * from './lib/admin/entity.model';
 export * from './lib/admin/delete-action-confirmation-dialog/delete-action-confirmation-dialog.component';
 export * from './lib/admin/delete-action-confirmation-dialog/delete-action-confirmation-dialog.model';
+export * from './lib/admin/secret-generated-dialog/secret-generated-dialog.component';
+export * from './lib/admin/secret-generated-dialog/secret-generated-dialog.model';
 
 export * from './lib/layout/ddap-layout.module';
 export * from './lib/layout/realm/realm.constant';
