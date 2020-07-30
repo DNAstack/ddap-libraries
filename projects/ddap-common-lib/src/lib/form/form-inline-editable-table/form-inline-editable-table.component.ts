@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'ddaplib-form-inline-editable-table',
@@ -24,6 +25,10 @@ export class FormInlineEditableTableComponent implements OnInit {
   arrayFieldName: string;
   @Input()
   fieldTitle: string;
+  @Input()
+  showAutocomplete?: boolean = false;
+  @Input()
+  autocompleteOptions?: Observable<string[]>;
 
   displayedColumns: string[] = ['value', 'moreActions'];
   currentlyEditing: number;
@@ -45,6 +50,6 @@ export class FormInlineEditableTableComponent implements OnInit {
       this.datasource.insert(0, this.formBuilder.control(''));
     }
     this.dataTable.renderRows();
-    this.currentlyEditing = 0;
+    this.currentlyEditing = null;
   }
 }

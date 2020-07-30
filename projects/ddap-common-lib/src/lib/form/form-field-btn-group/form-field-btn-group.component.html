@@ -1,16 +1,40 @@
 <mat-form-field [appearance]="appearance"
                 class="form-field-btn-group">
   <mat-label>New {{ fieldTitle }}</mat-label>
-  <input #valueInput="matInput"
-         [formControl]="control"
-         [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
-         (keyup.enter)="done($event.target.value)"
-         matInput>
-  <button mat-button
-          color="primary"
-          data-se="btn-done"
-          [disabled]="control.invalid"
-          (click)="done(valueInput.value)">
-    Done
-  </button>
+  <ng-container *ngIf="showAutocomplete; else stringInput">
+    <input matInput
+           [formControl]="control"
+           [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
+           [matAutocomplete]="autocompleteValues"
+           (keyup.enter)="done(control.value)">
+    <mat-autocomplete #autocompleteValues="matAutocomplete">
+      <mat-option *ngFor="let option of autocompleteOptions | async"
+                  [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+    <button mat-button
+            color="primary"
+            data-se="btn-done"
+            type="button"
+            [disabled]="control.invalid"
+            (click)="done(control.value)">
+      Done
+    </button>
+  </ng-container>
+  <ng-template #stringInput>
+    <input #valueInput="matInput"
+           [formControl]="control"
+           [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
+           (keyup.enter)="done(valueInput.value)"
+           matInput>
+    <button mat-button
+            color="primary"
+            data-se="btn-done"
+            type="button"
+            [disabled]="control.invalid"
+            (click)="done( valueInput.value)">
+      Done
+    </button>
+  </ng-template>
 </mat-form-field>

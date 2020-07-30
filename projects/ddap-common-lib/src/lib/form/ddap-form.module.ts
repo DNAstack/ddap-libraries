@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { FormInlineEditableTableComponent } from './form-inline-editable-table/form-inline-editable-table.component';
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormInlineEditableTableComponent } from './form-inline-editable-table/f
     MatTableModule,
     MatIconModule,
     MatMenuModule,
+    MatAutocompleteModule,
   ],
   exports: [
     FormFooterErrorComponent,

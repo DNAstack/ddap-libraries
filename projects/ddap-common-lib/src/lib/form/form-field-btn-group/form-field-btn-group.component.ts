@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'ddaplib-form-field-btn-group',
@@ -19,6 +20,10 @@ export class FormFieldBtnGroupComponent {
   index?: number;
   @Input()
   appearance?: MatFormFieldAppearance = 'outline';
+  @Input()
+  showAutocomplete?: boolean = false;
+  @Input()
+  autocompleteOptions?: Observable<string[]>;
 
   @Output()
   readonly doneButtonClicked: EventEmitter<string> = new EventEmitter<string>();

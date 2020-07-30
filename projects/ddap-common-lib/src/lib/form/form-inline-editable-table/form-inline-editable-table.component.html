@@ -11,7 +11,8 @@
           <ddaplib-form-field-btn-group [control]="control"
                                         [fieldTitle]="fieldTitle"
                                         [fieldName]="arrayFieldName"
-                                        [index]="i"
+                                        [showAutocomplete]="showAutocomplete"
+                                        [autocompleteOptions]="autocompleteOptions"
                                         (doneButtonClicked)="addEmptyRow()">
           </ddaplib-form-field-btn-group>
         </ng-container>
@@ -20,6 +21,8 @@
             <ddaplib-form-field-btn-group [control]="control"
                                           [fieldName]="arrayFieldName"
                                           [index]="i"
+                                          [showAutocomplete]="showAutocomplete"
+                                          [autocompleteOptions]="autocompleteOptions"
                                           (doneButtonClicked)="addEmptyRow()">
             </ddaplib-form-field-btn-group>
           </ng-container>
