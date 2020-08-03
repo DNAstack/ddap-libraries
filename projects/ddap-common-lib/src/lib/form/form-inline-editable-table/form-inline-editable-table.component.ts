@@ -29,6 +29,10 @@ export class FormInlineEditableTableComponent implements OnInit {
   showAutocomplete?: boolean = false;
   @Input()
   autocompleteOptions?: Observable<string[]>;
+  @Input()
+  linkable = false;
+  @Input()
+  linkPrefix?: string;
 
   displayedColumns: string[] = ['value', 'moreActions'];
   currentlyEditing: number;

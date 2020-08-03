@@ -28,11 +28,16 @@
           </ng-container>
         </ng-template>
         <ng-template #readonlyMode>
-          <a [href]="control.value"
-             target="_blank"
-             rel="noopener noreferrer">
-            {{ control.value }}
-          </a>
+          <ng-container *ngIf="linkable; else nonLinkValue">
+            <a [href]="linkPrefix ? linkPrefix : '' + control.value"
+               target="_blank"
+               rel="noopener noreferrer">
+              {{ control.value }}
+            </a>
+          </ng-container>
+          <ng-template #nonLinkValue>
+            <span>{{ control.value }}</span>
+          </ng-template>
         </ng-template>
       </td>
     </ng-container>
