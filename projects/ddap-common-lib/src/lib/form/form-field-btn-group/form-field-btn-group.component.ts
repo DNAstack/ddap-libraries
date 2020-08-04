@@ -21,14 +21,21 @@ export class FormFieldBtnGroupComponent {
   @Input()
   appearance?: MatFormFieldAppearance = 'outline';
   @Input()
-  showAutocomplete?: boolean = false;
+  showAutocomplete? = false;
   @Input()
   autocompleteOptions?: Observable<string[]>;
 
   @Output()
   readonly doneButtonClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  readonly cancelButtonClicked: EventEmitter<void> = new EventEmitter<void>();
 
   done(inputValue: string) {
-    this.doneButtonClicked.emit(inputValue)
+    this.doneButtonClicked.emit(inputValue);
   }
+
+  cancel() {
+    this.cancelButtonClicked.emit();
+  }
+
 }

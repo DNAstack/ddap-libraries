@@ -6,7 +6,8 @@
            [formControl]="control"
            [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
            [matAutocomplete]="autocompleteValues"
-           (keyup.enter)="done(control.value)">
+           (keyup.enter)="done(control.value)"
+           (keyup.escape)="cancel()">
     <mat-autocomplete #autocompleteValues="matAutocomplete">
       <mat-option *ngFor="let option of autocompleteOptions | async"
                   [value]="option">
@@ -27,6 +28,7 @@
            [formControl]="control"
            [attr.data-se]="'inp-' + fieldName + (index ? '-' + index : '')"
            (keyup.enter)="done(valueInput.value)"
+           (keyup.escape)="cancel()"
            matInput>
     <button mat-button
             color="primary"
