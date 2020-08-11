@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import { ViewControllerService } from '../../view-controller/view-controller.service';
+import {Router} from '@angular/router';
+import {GroupMetadata} from '../../view-controller/group-metadata.model';
 
 @Component({
   selector: 'app-sidenav-left',
@@ -15,7 +17,7 @@ export class SidenavLeftComponent {
   @Input()
   isAdmin?: boolean;
 
-  constructor(public viewController: ViewControllerService) {
+  constructor(public viewController: ViewControllerService, private router: Router) {
   }
 
   toggleLeftSideNav() {
@@ -30,4 +32,12 @@ export class SidenavLeftComponent {
     return true;
   }
 
+  shouldExpandPanel(group: GroupMetadata) {
+    for (const submodule of this.viewController.getGroupSubmodules(group)) {
+      if (this.router.url.includes(submodule.routerLink)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

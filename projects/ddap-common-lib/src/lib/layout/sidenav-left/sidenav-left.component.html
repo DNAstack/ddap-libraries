@@ -25,7 +25,7 @@
         <mat-expansion-panel *ngIf="showNonAdminModules(group.nonAdmin)"
                              [attr.data-se]="'nav-group-'+group.key"
                              [disabled]="!group.collapsible"
-                             [expanded]="!group.collapsibleByDefault">
+                             [expanded]="!group.collapsibleByDefault || shouldExpandPanel(group)">
           <mat-expansion-panel-header>
             <mat-panel-title>{{group.name}}</mat-panel-title>
           </mat-expansion-panel-header>
