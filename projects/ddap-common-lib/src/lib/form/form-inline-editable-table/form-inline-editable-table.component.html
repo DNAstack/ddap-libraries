@@ -58,7 +58,8 @@
     <mat-menu #moreActionsMenu="matMenu">
       <ng-template matMenuContent
                    let-index="index">
-        <button mat-menu-item
+        <button *ngIf="editable"
+                mat-menu-item
                 data-se="btn-edit"
                 (click)="currentlyEditing = index">
           Edit
