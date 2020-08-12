@@ -33,11 +33,6 @@ export class SidenavLeftComponent {
   }
 
   shouldExpandPanel(group: GroupMetadata) {
-    for (const submodule of this.viewController.getGroupSubmodules(group)) {
-      if (this.router.url.includes(submodule.routerLink)) {
-        return true;
-      }
-    }
-    return false;
+    return this.viewController.getGroupSubmodules(group).some((submodule) => this.router.url.includes(submodule.routerLink));
   }
 }
