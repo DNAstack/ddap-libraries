@@ -24,6 +24,8 @@ export class FormFieldBtnGroupComponent {
   showAutocomplete? = false;
   @Input()
   autocompleteOptions?: Observable<string[]>;
+  @Input()
+  showCancelBtn? = false;
 
   @Output()
   readonly doneButtonClicked: EventEmitter<string> = new EventEmitter<string>();
