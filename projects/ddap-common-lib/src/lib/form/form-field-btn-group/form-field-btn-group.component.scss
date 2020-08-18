@@ -1,4 +1,4 @@
-::ng-deep .form-field-btn-group {
+:host ::ng-deep .form-field-btn-group.mat-form-field-appearance-outline {
   .mat-form-field-infix {
     display: flex;
     padding: 0 0 0.5rem 0;
@@ -6,5 +6,19 @@
 
   .mat-form-field-wrapper {
     padding: 0;
+  }
+}
+
+:host ::ng-deep .form-field-btn-group.mat-form-field-appearance-fill {
+  .mat-form-field-flex {
+    padding-top: 0;
+  }
+
+  .mat-form-field-infix {
+    display: flex;
+  }
+
+  .mat-form-field-label-wrapper {
+    top: 0;
   }
 }

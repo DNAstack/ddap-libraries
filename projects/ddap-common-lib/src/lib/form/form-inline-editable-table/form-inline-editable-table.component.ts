@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatTable } from '@angular/material/table';
 import {Observable} from "rxjs";
 
@@ -36,11 +36,11 @@ export class FormInlineEditableTableComponent implements OnInit {
   @Input()
   editable? = true;
 
-  displayedColumns: string[] = ['value', 'moreActions'];
+  readonly displayedColumns: string[] = ['value', 'moreActions'];
   currentlyEditing: number;
+  newValueInputControl: FormControl = new FormControl();
 
   ngOnInit(): void {
-    this.datasource.insert(0, this.formBuilder.control(''));
     this.datasource.valueChanges
       .subscribe(() => this.dataTable.renderRows());
   }
@@ -50,12 +50,9 @@ export class FormInlineEditableTableComponent implements OnInit {
     this.currentlyEditing = null;
   }
 
-  addEmptyRow() {
-    const firstControl = this.datasource.controls[0];
-    if (!firstControl || firstControl.value) {
-      this.datasource.insert(0, this.formBuilder.control(''));
-    }
-    this.dataTable.renderRows();
-    this.currentlyEditing = null;
+  addRow(value: string): void {
+    this.datasource.insert(0, this.formBuilder.control(value));
+    this.newValueInputControl.reset();
   }
+
 }

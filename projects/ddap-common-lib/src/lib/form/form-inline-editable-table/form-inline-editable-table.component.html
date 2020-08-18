@@ -1,32 +1,30 @@
 <ng-container [formGroup]="form">
+  <ddaplib-form-field-btn-group [control]="newValueInputControl"
+                                [appearance]="'fill'"
+                                [fieldName]="arrayFieldName"
+                                [fieldTitle]="fieldTitle"
+                                [showAutocomplete]="showAutocomplete"
+                                [autocompleteOptions]="autocompleteOptions"
+                                (doneButtonClicked)="addRow($event)">
+  </ddaplib-form-field-btn-group>
   <table #dataTable="matTable"
          mat-table [dataSource]="datasource.controls"
          class="table--base mat-elevation-z1"
          [formArrayName]="arrayFieldName">
     <!-- Value Definition -->
     <ng-container matColumnDef="value">
-      <th mat-header-cell *matHeaderCellDef>{{fieldTitle}}s</th>
+      <th mat-header-cell *matHeaderCellDef>{{ fieldTitle }}s</th>
       <td mat-cell *matCellDef="let control; let i = index">
-        <ng-container *ngIf="i === 0; else otherIndices">
+        <ng-container *ngIf="currentlyEditing === i; else readonlyMode">
           <ddaplib-form-field-btn-group [control]="control"
-                                        [fieldTitle]="fieldTitle"
                                         [fieldName]="arrayFieldName"
+                                        [fieldTitle]="fieldTitle"
+                                        [index]="i"
                                         [showAutocomplete]="showAutocomplete"
                                         [autocompleteOptions]="autocompleteOptions"
-                                        (doneButtonClicked)="addEmptyRow()">
+                                        (doneButtonClicked)="currentlyEditing = null">
           </ddaplib-form-field-btn-group>
         </ng-container>
-        <ng-template #otherIndices>
-          <ng-container *ngIf="currentlyEditing === i; else readonlyMode">
-            <ddaplib-form-field-btn-group [control]="control"
-                                          [fieldName]="arrayFieldName"
-                                          [index]="i"
-                                          [showAutocomplete]="showAutocomplete"
-                                          [autocompleteOptions]="autocompleteOptions"
-                                          (doneButtonClicked)="addEmptyRow()">
-            </ddaplib-form-field-btn-group>
-          </ng-container>
-        </ng-template>
         <ng-template #readonlyMode>
           <ng-container *ngIf="linkable; else nonLinkValue">
             <a [href]="linkPrefix ? linkPrefix : '' + control.value"
@@ -39,6 +37,7 @@
             <span>{{ control.value }}</span>
           </ng-template>
         </ng-template>
+        <mat-error *ngIf="control.invalid">{{ control.errors?.serverError }}</mat-error>
       </td>
     </ng-container>
     <!-- More Actions Column -->
@@ -46,8 +45,7 @@
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let control; let i = index"
           class="table--actions">
-        <mat-icon *ngIf="i !== 0"
-                  [matMenuTriggerFor]="moreActionsMenu"
+        <mat-icon [matMenuTriggerFor]="moreActionsMenu"
                   [matMenuTriggerData]="{ index: i }"
                   data-se="btn-more-actions">
           more_vert
