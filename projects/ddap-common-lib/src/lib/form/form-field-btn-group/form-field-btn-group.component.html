@@ -11,7 +11,7 @@
     <mat-autocomplete #autocompleteValues="matAutocomplete">
       <mat-option *ngFor="let option of autocompleteOptions | async"
                   [value]="option">
-        {{option}}
+        {{ option }}
       </mat-option>
     </mat-autocomplete>
     <button *ngIf="showCancelBtn"
@@ -26,7 +26,7 @@
             color="primary"
             data-se="btn-done"
             type="button"
-            [disabled]="control.invalid"
+            [disabled]="allowInvalidInputs ? false : control.invalid"
             (click)="done(control.value)">
       Done
     </button>
@@ -49,7 +49,7 @@
             color="primary"
             data-se="btn-done"
             type="button"
-            [disabled]="control.invalid"
+            [disabled]="allowInvalidInputs ? false : control.invalid"
             (click)="done(control.value)">
       Done
     </button>
