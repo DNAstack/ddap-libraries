@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ConfigOptionEditDialogComponent } from './config-option-edit-dialog/config-option-edit-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     EntityDescriptionLinkComponent,
     DeleteActionConfirmationDialogComponent,
     SecretGeneratedDialogComponent,
+    ConfigOptionEditDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -31,12 +34,14 @@ import { ClipboardModule } from 'ngx-clipboard';
     MatIconModule,
 
     ClipboardModule,
+    ReactiveFormsModule,
   ],
   exports: [
     EntityDescriptionComponent,
     EntityDescriptionLinkComponent,
     DeleteActionConfirmationDialogComponent,
     SecretGeneratedDialogComponent,
+    ConfigOptionEditDialogComponent,
   ]
 })
 export class DdapAdminModule { }

@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{ data.label }}</h2>
+<mat-dialog-content>
+  {{ data.description }}
+  <mat-form-field appearance="fill"
+                  class="inp-field">
+    <input [placeholder]="data.label"
+           [formControl]="valueControl"
+           matInput
+           data-se="inp-value">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button (click)="valueControl.reset()"
+          [mat-dialog-close]="{ acknowledged: false }"
+          mat-button
+          class="uppercase"
+          data-se="cancel-btn">
+    Cancel
+  </button>
+  <button [mat-dialog-close]="{ acknowledged: true, newValue: valueControl.value }"
+          mat-button
+          color="warn"
+          class="uppercase"
+          data-se="accept-btn">
+    Update
+  </button>
+</mat-dialog-actions>
