@@ -4,6 +4,6 @@
  */
 export class ConfigModificationModel {
 
-  constructor(public item: object, public modification: object) {}
+  constructor(public item: object, public modification: object, public clientSecret?: string) {}
 
 }
