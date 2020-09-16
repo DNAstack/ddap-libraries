@@ -9,9 +9,6 @@
   "references": [
     {
       "path": "./projects/ddap-common-lib/tsconfig.lib.json"
-    },
-    {
-      "path": "./projects/ddap-common-lib/tsconfig.spec.json"
     }
   ]
 }
